@@ -15,7 +15,14 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "D:\\Projects\\Versus\\Versus\\Versus.Core\\Versus.Core.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Core\\Versus.Core.csproj"
+          },
+          "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -26,6 +33,16 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.AspNetCore.Identity": {
+          "target": "Package",
+          "version": "[2.2.0, )"
+        },
+        "System.IdentityModel.Tokens.Jwt": {
+          "target": "Package",
+          "version": "[5.1.0, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",

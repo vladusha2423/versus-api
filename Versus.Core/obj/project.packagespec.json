@@ -15,7 +15,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

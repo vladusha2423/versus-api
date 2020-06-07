@@ -5,7 +5,8 @@ namespace Versus.Data.Entities
     public class Settings
     {
         public Guid Id { get; set; }
-        public User UserId { get; set; }
+        public Guid UserId { get; set; }
+        public User User { get; set; }
         public bool Language { get; set; }
         public bool Sound { get; set; }
         public bool Invites { get; set; }

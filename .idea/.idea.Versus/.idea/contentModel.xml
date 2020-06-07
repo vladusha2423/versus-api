@@ -11,17 +11,28 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Context" t="Include">
-          <e p="AppContext.cs" t="Include" />
+        <e p="Configurations" t="Include">
+          <e p="ConfigureConnection.cs" t="Include" />
+          <e p="ConfigureJwt.cs" t="Include" />
+          <e p="ConfigureServices.cs" t="Include" />
         </e>
-        <e p="Controllers" t="Include" />
-        <e p="Models" t="Include">
-          <e p="Exercise.cs" t="Include" />
-          <e p="Notifications.cs" t="Include" />
-          <e p="Settings.cs" t="Include" />
-          <e p="User.cs" t="Include" />
-          <e p="UserExercises.cs" t="Include" />
-          <e p="VIP.cs" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="AuthConroller.cs" t="Include" />
+          <e p="ExerciseController.cs" t="Include" />
+          <e p="ExercisesController.cs" t="Include" />
+          <e p="NotificationsController.cs" t="Include" />
+          <e p="SettingsController.cs" t="Include" />
+          <e p="UsersController.cs" t="Include" />
+          <e p="VipsController.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20200601032739_identity.cs" t="Include" />
+          <e p="20200601032739_identity.Designer.cs" t="Include" />
+          <e p="20200601080450_requiredToken.cs" t="Include" />
+          <e p="20200601080450_requiredToken.Designer.cs" t="Include" />
+          <e p="20200601081558_nameToUserName.cs" t="Include" />
+          <e p="20200601081558_nameToUserName.Designer.cs" t="Include" />
+          <e p="VersusContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -33,13 +44,19 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Versus.csproj" t="IncludeRecursive" />
       </e>
       <e p="Versus.Auth" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="Interfaces" t="Include">
+          <e p="IAuthService.cs" t="Include" />
+          <e p="IJwtGenerator.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -47,11 +64,17 @@
             </e>
           </e>
         </e>
+        <e p="Services" t="Include">
+          <e p="AuthService.cs" t="Include" />
+          <e p="JwtGenerator.cs" t="Include" />
+        </e>
         <e p="Versus.Auth.csproj" t="IncludeRecursive" />
       </e>
       <e p="Versus.Core" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
+        <e p="EF" t="Include">
+          <e p="VersusContext.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -63,14 +86,19 @@
       </e>
       <e p="Versus.Data" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Converters" t="Include" />
-        <e p="DTO" t="Include" />
+        <e p="Converters" t="Include">
+          <e p="UserConverter.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="UserDto.cs" t="Include" />
+        </e>
         <e p="Entities" t="Include">
           <e p="Exercise.cs" t="Include" />
+          <e p="Exercises.cs" t="Include" />
+          <e p="FCMToken.cs" t="Include" />
           <e p="Notifications.cs" t="Include" />
           <e p="Settings.cs" t="Include" />
           <e p="User.cs" t="Include" />
-          <e p="UserExercises.cs" t="Include" />
           <e p="VIP.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -80,7 +108,6 @@
             </e>
           </e>
         </e>
-        <e p="Repositories" t="Include" />
         <e p="Versus.Data.csproj" t="IncludeRecursive" />
       </e>
       <e p="Versus.sln" t="IncludeFlat" />

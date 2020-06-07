@@ -1,0 +1,9 @@
+D:\Projects\Versus\Versus\Versus.Data\bin\Debug\netcoreapp3.1\Versus.Data.deps.json
+D:\Projects\Versus\Versus\Versus.Data\bin\Debug\netcoreapp3.1\Versus.Data.dll
+D:\Projects\Versus\Versus\Versus.Data\bin\Debug\netcoreapp3.1\Versus.Data.pdb
+D:\Projects\Versus\Versus\Versus.Data\obj\Debug\netcoreapp3.1\Versus.Data.csprojAssemblyReference.cache
+D:\Projects\Versus\Versus\Versus.Data\obj\Debug\netcoreapp3.1\Versus.Data.csproj.CoreCompileInputs.cache
+D:\Projects\Versus\Versus\Versus.Data\obj\Debug\netcoreapp3.1\Versus.Data.AssemblyInfoInputs.cache
+D:\Projects\Versus\Versus\Versus.Data\obj\Debug\netcoreapp3.1\Versus.Data.AssemblyInfo.cs
+D:\Projects\Versus\Versus\Versus.Data\obj\Debug\netcoreapp3.1\Versus.Data.dll
+D:\Projects\Versus\Versus\Versus.Data\obj\Debug\netcoreapp3.1\Versus.Data.pdb

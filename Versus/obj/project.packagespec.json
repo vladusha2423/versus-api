@@ -15,7 +15,17 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "D:\\Projects\\Versus\\Versus\\Versus.Auth\\Versus.Auth.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Auth\\Versus.Auth.csproj"
+          },
+          "D:\\Projects\\Versus\\Versus\\Versus.Core\\Versus.Core.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Core\\Versus.Core.csproj"
+          },
+          "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -27,7 +37,37 @@
   "frameworks": {
     "netcoreapp3.1": {
       "dependencies": {
+        "Microsoft.AspNetCore.Authentication.JwtBearer": {
+          "target": "Package",
+          "version": "[3.1.4, )"
+        },
         "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[3.1.4, )"
+        },
+        "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+          "target": "Package",
+          "version": "[3.1.4, )"
+        },
+        "Microsoft.EntityFrameworkCore.SqlServer": {
+          "target": "Package",
+          "version": "[3.1.2, )"
+        },
+        "Microsoft.EntityFrameworkCore.Sqlite": {
+          "target": "Package",
+          "version": "[3.1.2, )"
+        },
+        "Microsoft.EntityFrameworkCore.Tools": {
+          "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[3.1.2, )"
+        },
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "target": "Package",
+          "version": "[3.1.3, )"
+        },
+        "Npgsql.EntityFrameworkCore.PostgreSQL": {
           "target": "Package",
           "version": "[3.1.4, )"
         }
