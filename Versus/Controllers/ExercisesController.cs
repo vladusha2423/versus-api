@@ -52,6 +52,56 @@ namespace Versus.Controllers
             return exercises;
         }
 
+        // GET: api/Exercises/5
+        [HttpPost("reset/{id}")]
+        public async Task<ActionResult<Exercises>> ResetExercises(Guid id)
+        {
+            var exercises = await _context.Exercises
+                .Include(e => e.PushUps)
+                .Include(e => e.PullUps)
+                .Include(e => e.Abs)
+                .Include(e => e.Squats)
+                .FirstOrDefaultAsync(e => e.Id == id);
+
+            exercises.PushUps.Wins = 0;
+            exercises.PushUps.Losses = 0;
+            exercises.PushUps.HighScore = 0;
+            exercises.PullUps.Wins = 0;
+            exercises.PullUps.Losses = 0;
+            exercises.PullUps.HighScore = 0;
+            exercises.Abs.Wins = 0;
+            exercises.Abs.Losses = 0;
+            exercises.Abs.HighScore = 0;
+            exercises.Squats.Wins = 0;
+            exercises.Squats.Losses = 0;
+            exercises.Squats.HighScore = 0;
+
+            _context.Entry(exercises).State = EntityState.Modified;
+
+            if (exercises == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                await _context.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ExercisesExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
         // PUT: api/Exercises/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

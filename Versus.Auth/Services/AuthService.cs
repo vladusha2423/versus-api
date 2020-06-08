@@ -24,30 +24,30 @@ namespace Versus.Auth.Services
             _jwt = jwt;
         }
 
-        public async Task<object> Login(string token)
+        public async Task<object> Login(string username, string password)
         {
-            if (token == null)
+            if (username == null || password == null)
                 return null;
 
-            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.Token == token);
-
-            if (user == null) return null;
-            
-            await _signInManager.SignInAsync(user, true);
-                            
-            return await _jwt.GenerateJwt(user);
-
-        }
-
-        
-        public async Task<object> Register(UserDto item)
-        {
-            User user = UserConverter.Convert(item);
-            var result = await _userManager.CreateAsync(user, item.Token);
+            var result = await _signInManager.PasswordSignInAsync(username, password, false, false);
 
             if (result.Succeeded)
             {
-                await _signInManager.SignInAsync(user, true);
+                var appUser = await _userManager.FindByNameAsync(username);
+                return await _jwt.GenerateJwt(appUser);
+            }
+            return null;
+        }
+
+
+        public async Task<object> Register(UserDto item)
+        {
+            User user = UserConverter.Convert(item);
+            var result = await _userManager.CreateAsync(user, item.Password);
+
+            if (result.Succeeded)
+            {
+                await _signInManager.SignInAsync(user, false);
                 await _userManager.AddToRoleAsync(user, "user");
                 return await _jwt.GenerateJwt(user);
             }

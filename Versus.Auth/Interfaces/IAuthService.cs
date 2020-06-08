@@ -8,7 +8,7 @@ namespace Versus.Auth.Interfaces
 {
     public interface IAuthService
     {
-        Task<object> Login(string token);
+        Task<object> Login(string username, string password);
 
         Task<object> Register(UserDto item);
     }
