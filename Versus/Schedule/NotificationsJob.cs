@@ -37,6 +37,7 @@ namespace Versus.Schedule
 
         private async Task<string> ChoosePhrase(Guid userId)
         {
+            // Check git
             var phrases = new List<string>
             {
                 "Первые в мире спортивные соревнования через интернет! Тренируйся и зарабатывай! 👍",

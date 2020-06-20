@@ -1,147 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73a0eae6-43f5-4676-86c4-b0ac83d426de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/MyselfInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Notification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Register.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Versus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/VersusResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/VersusUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/ConnectionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/Extensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/Middleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus/Configurations/UserIdProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus/wwwroot/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Versus/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Versus/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Versus/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Versus/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/Versus.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/Versus.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/Login.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/Login.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601032739_identity.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601032739_identity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601080450_requiredToken.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601080450_requiredToken.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601081558_nameToUserName.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601081558_nameToUserName.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200608004743_passwordNotifications.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200608004743_passwordNotifications.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Migrations/VersusContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml.user" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Versus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Versus.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/EFSQLScripts/Versus.EF.VersusContext.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.EntityFrameworkCore.PostgreSQL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.EntityFrameworkCore.PostgreSQL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/project.packagespec.json" afterDir="false" />
-    </list>
+    <list default="true" id="73a0eae6-43f5-4676-86c4-b0ac83d426de" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -501,7 +361,7 @@
       <workItem from="1592299442343" duration="19024000" />
       <workItem from="1592388036608" duration="37419000" />
       <workItem from="1592489466533" duration="14964000" />
-      <workItem from="1592580506691" duration="12956000" />
+      <workItem from="1592580506691" duration="13329000" />
     </task>
     <servers />
   </component>
