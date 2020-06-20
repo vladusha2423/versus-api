@@ -15,23 +15,44 @@
           <e p="ConfigureConnection.cs" t="Include" />
           <e p="ConfigureJwt.cs" t="Include" />
           <e p="ConfigureServices.cs" t="Include" />
+          <e p="UserIdProvider.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="AuthConroller.cs" t="Include" />
           <e p="ExerciseController.cs" t="Include" />
           <e p="ExercisesController.cs" t="Include" />
+          <e p="MessagesController.cs" t="Include" />
           <e p="NotificationsController.cs" t="Include" />
           <e p="SettingsController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
+          <e p="VersusController.cs" t="Include" />
           <e p="VipsController.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20200601032739_identity.cs" t="Include" />
-          <e p="20200601032739_identity.Designer.cs" t="Include" />
-          <e p="20200601080450_requiredToken.cs" t="Include" />
-          <e p="20200601080450_requiredToken.Designer.cs" t="Include" />
-          <e p="20200601081558_nameToUserName.cs" t="Include" />
-          <e p="20200601081558_nameToUserName.Designer.cs" t="Include" />
+          <e p="20200611065645_init.cs" t="Include" />
+          <e p="20200611065645_init.Designer.cs" t="Include" />
+          <e p="20200611065823_init1.cs" t="Include" />
+          <e p="20200611065823_init1.Designer.cs" t="Include" />
+          <e p="20200611070158_LastTime.cs" t="Include" />
+          <e p="20200611070158_LastTime.Designer.cs" t="Include" />
+          <e p="20200611085648_IsVipAndChampions.cs" t="Include" />
+          <e p="20200611085648_IsVipAndChampions.Designer.cs" t="Include" />
+          <e p="20200611090800_Champions.cs" t="Include" />
+          <e p="20200611090800_Champions.Designer.cs" t="Include" />
+          <e p="20200612120916_Online.cs" t="Include" />
+          <e p="20200612120916_Online.Designer.cs" t="Include" />
+          <e p="20200612140208_VersusEntities.cs" t="Include" />
+          <e p="20200612140208_VersusEntities.Designer.cs" t="Include" />
+          <e p="20200613170533_Rate.cs" t="Include" />
+          <e p="20200613170533_Rate.Designer.cs" t="Include" />
+          <e p="20200614163526_JobIdVersus.cs" t="Include" />
+          <e p="20200614163526_JobIdVersus.Designer.cs" t="Include" />
+          <e p="20200614193046_VersusLastInvited.cs" t="Include" />
+          <e p="20200614193046_VersusLastInvited.Designer.cs" t="Include" />
+          <e p="20200617160643_UserSocket.cs" t="Include" />
+          <e p="20200617160643_UserSocket.Designer.cs" t="Include" />
+          <e p="20200617224647_FirstCompleteId.cs" t="Include" />
+          <e p="20200617224647_FirstCompleteId.Designer.cs" t="Include" />
           <e p="VersusContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -48,8 +69,20 @@
             <e p="FolderProfile.pubxml" t="Include" />
           </e>
         </e>
+        <e p="Schedule" t="Include">
+          <e p="JobSchedule.cs" t="Include" />
+          <e p="NotificationsJob.cs" t="Include" />
+          <e p="QuartzHostedService.cs" t="Include" />
+          <e p="SingletonJobFactory.cs" t="Include" />
+        </e>
         <e p="Startup.cs" t="Include" />
         <e p="Versus.csproj" t="IncludeRecursive" />
+        <e p="wwwroot" t="Include">
+          <e p="index.7z" t="Include" />
+          <e p="index.html" t="Include" />
+          <e p="js" t="Include" />
+          <e p="signalr.html" t="Include" />
+        </e>
       </e>
       <e p="Versus.Auth" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -93,12 +126,22 @@
           <e p="UserDto.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
+          <e p="Champion.cs" t="Include" />
           <e p="Exercise.cs" t="Include" />
           <e p="Exercises.cs" t="Include" />
           <e p="FCMToken.cs" t="Include" />
+          <e p="Login.cs" t="Include" />
+          <e p="Myself.cs" t="Include" />
+          <e p="MyselfInfo.cs" t="Include" />
+          <e p="Notification.cs" t="Include" />
           <e p="Notifications.cs" t="Include" />
+          <e p="Register.cs" t="Include" />
           <e p="Settings.cs" t="Include" />
           <e p="User.cs" t="Include" />
+          <e p="UserSocket.cs" t="Include" />
+          <e p="Versus.cs" t="Include" />
+          <e p="VersusResponse.cs" t="Include" />
+          <e p="VersusUser.cs" t="Include" />
           <e p="VIP.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -110,7 +153,43 @@
         </e>
         <e p="Versus.Data.csproj" t="IncludeRecursive" />
       </e>
+      <e p="Versus.Messaging" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Credentials" t="Include">
+          <e p="serviceAccountKey.json" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IMobileMessagingClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Versus.Messaging.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="MobileMessagingClient.cs" t="Include" />
+        </e>
+        <e p="Versus.Messaging.csproj" t="IncludeRecursive" />
+      </e>
       <e p="Versus.sln" t="IncludeFlat" />
+      <e p="Versus.WebSockets" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ConnectionManager.cs" t="Include" />
+        <e p="Extensions.cs" t="Include" />
+        <e p="Handler.cs" t="Include" />
+        <e p="MessagesHandler.cs" t="Include" />
+        <e p="Middleware.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Versus.WebSockets.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Versus.WebSockets.csproj" t="IncludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

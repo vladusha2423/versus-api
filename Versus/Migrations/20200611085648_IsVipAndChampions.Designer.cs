@@ -10,8 +10,8 @@ using Versus.Core.EF;
 namespace Versus.Migrations
 {
     [DbContext(typeof(VersusContext))]
-    [Migration("20200608004743_passwordNotifications")]
-    partial class passwordNotifications
+    [Migration("20200611085648_IsVipAndChampions")]
+    partial class IsVipAndChampions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,22 +46,6 @@ namespace Versus.Migrations
                         .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("e9dd5cd9-6520-48be-9126-f574c342b983"),
-                            ConcurrencyStamp = "7eb7cdba-8b3b-419a-b414-87412a6f1eaf",
-                            Name = "admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = new Guid("26fef8bc-3e6d-4a2f-bb99-a9b7bf5bdc6b"),
-                            ConcurrencyStamp = "be898b2e-9adb-41bc-97d3-a7ffdf0342d8",
-                            Name = "user",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -310,6 +294,12 @@ namespace Versus.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
+
+                    b.Property<bool>("IsVip")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("LastTime")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");

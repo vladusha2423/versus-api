@@ -2,159 +2,345 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a0eae6-43f5-4676-86c4-b0ac83d426de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/FcmToken.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/MyselfInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Notification.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Register.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/Versus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/VersusResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Entities/VersusUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/ConnectionManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.WebSockets/Middleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus/Configurations/UserIdProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus/wwwroot/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Versus/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Versus/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Versus/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Versus/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/Versus.Auth.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Versus.Auth.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Versus.Auth.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Core/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/Versus.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/Versus.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Versus.Core.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/Login.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/Login.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/UserExercises.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/Versus.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Versus.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Versus.Data.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Versus.Data.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Versus.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Versus.Data.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Models/Exercise.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Models/Notifications.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Models/Settings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Models/User.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Models/UserExercises.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/Exercises.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Models/VIP.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601032739_identity.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601032739_identity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601080450_requiredToken.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601080450_requiredToken.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601081558_nameToUserName.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200601081558_nameToUserName.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200608004743_passwordNotifications.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/20200608004743_passwordNotifications.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/VersusContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml.user" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Properties/PublishProfiles/FolderProfile.pubxml.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/Versus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Versus.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Versus.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Versus.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Auth.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/EFSQLScripts/Versus.EF.VersusContext.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.EntityFrameworkCore.PostgreSQL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.EntityFrameworkCore.PostgreSQL.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Npgsql.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/Versus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/PubTmp/Out/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Release/netcoreapp3.1/Versus.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Versus.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Versus/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versus/Новая папка/AppContext.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Versus" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Versus" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Versus" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Versus" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Versus" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Versus" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Versus" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Versus/Controllers/VipsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F129BFFB-E30E-4E83-BAD7-40868B141DB2/6/Hub.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Notification.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Register.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D4CBD64C-8E11-4688-9804-096A430ED373/6/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61B7B576-1642-4BB6-A477-BB9F6717C0DF/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D4CBD64C-8E11-4688-9804-096A430ED373/7/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/13DA8DF4-F4FB-4394-A581-F44A587913F7/24/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/VersusController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Versus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FA2177E1-7B59-4D03-8C60-C68CA3DF33B9/A/CorsOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Configurations/UserIdProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/16B/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/16F/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/MyselfInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/25F/AsyncMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Schedule/QuartzHostedService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Schedule/SingletonJobFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/38/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Schedule/NotificationsJob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Schedule/JobSchedule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Login.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9764A487-CD89-48B4-92F1-D4A7FF00F1DE/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/VersusResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/VipsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Myself.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200611090800_Champions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200611085648_IsVipAndChampions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/UsersController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Exercises.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FDD4AA72-3833-4C82-8485-EEC5EB858290/91/JobRunShell.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/FcmToken.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200611070158_LastTime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.WebSockets/Middleware.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200611065823_init1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.WebSockets/Handler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.WebSockets/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.WebSockets/ConnectionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/VersusUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Exercise.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200611065645_init.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42E91E9E-59DE-4A8B-8FEF-16881D2D2583/6/JwtBearerEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Notifications.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200601032739_identity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FEE5448D-C7B4-48FD-B49C-A6BEA263F986/6b/b35c54d7/Expression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/14E/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/UserExercises.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/UserExercises.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/VIP.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/Settings.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/Notifications.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/Exercise.cs" />
-        <option value="$PROJECT_DIR$/Versus/Context/AppContext.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Class1.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/DTO/UserDto.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/Converters/UserConverter.cs" />
-        <option value="$PROJECT_DIR$/Versus/Models/User.cs" />
-        <option value="$PROJECT_DIR$/Versus/EF/VersusContext.cs" />
-        <option value="$PROJECT_DIR$/Versus.Core/Class1.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Class1.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/User.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Versus/Versus.csproj" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/VersusToken.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/VersusResponse.cs" />
+        <option value="$USER_HOME$/Desktop/index.html" />
+        <option value="$PROJECT_DIR$/Versus/Configurations/UserIdProvider.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f789fadc-795e-41ce-8419-ab1491291833/console.sql" />
+        <option value="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/Class1.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/ConnectionManager.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/MyselfInfo.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" />
+        <option value="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Versus.cs" />
+        <option value="$PROJECT_DIR$/Versus.Core/Repositories/FindRepository.cs" />
+        <option value="$PROJECT_DIR$/Versus/Repositories/IFindRepository.cs" />
+        <option value="$PROJECT_DIR$/Versus/Repositories/FindRepository.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" />
+        <option value="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" />
+        <option value="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" />
+        <option value="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" />
+        <option value="$PROJECT_DIR$/Versus.Core/Hubs/MessagesHub.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Login.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Myself.cs" />
         <option value="$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Notifications.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Exercises.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Exercise.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/VersusUser.cs" />
+        <option value="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/Extensions.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/Middleware.cs" />
+        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" />
+        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" />
+        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/User.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" />
-        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" />
-        <option value="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" />
-        <option value="$PROJECT_DIR$/Versus/Versus.csproj" />
-        <option value="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" />
-        <option value="$PROJECT_DIR$/Versus/appsettings.json" />
-        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Token.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/FCMToken.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" />
-        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" />
-        <option value="$PROJECT_DIR$/Versus/Startup.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" />
+        <option value="$PROJECT_DIR$/Versus/Program.cs" />
+        <option value="$PROJECT_DIR$/Versus/Startup.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" />
+        <option value="$PROJECT_DIR$/Versus/wwwroot/index.html" />
+        <option value="$PROJECT_DIR$/Versus/Schedule/NotificationsJob.cs" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="ProjectId" id="1cLae9wZyb61nagNPdWDgAO7gCm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -164,13 +350,63 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/ip" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Versus">
+    <configuration name="Publish Versus to folder (1)" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish uuid_high="1766346655226547196" uuid_low="-6412678737007408484" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish Versus to folder" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" self_contained="true" target_folder="$USER_HOME$/Desktop/VersusAPI" target_framework="netcoreapp3.1" uuid_high="1766346655226547196" uuid_low="-6412678737007408484" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Versus" type="DotNetPublishAndUpload" factoryName="Publish to custom server" temporary="true">
+      <riderPublish runtime="linux-x64" server_id="69043a92-5ac1-44ac-b879-9813ed6ae0e4" target_framework="netcoreapp3.1" uuid_high="1766346655226547196" uuid_low="-6412678737007408484" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Versus" type="DotNetPublishAndUpload" factoryName="Publish to custom server" temporary="true">
+      <riderPublish runtime="Portable" server_id="69043a92-5ac1-44ac-b879-9813ed6ae0e4" target_framework="netcoreapp3.1" uuid_high="1766346655226547196" uuid_low="-6412678737007408484" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Versus" type="DotNetPublishAndUpload" factoryName="Publish to custom server" temporary="true">
+      <riderPublish runtime="linux-x64" server_id="69043a92-5ac1-44ac-b879-9813ed6ae0e4" target_framework="netcoreapp3.1" uuid_high="1766346655226547196" uuid_low="-6412678737007408484" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Versus" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Versus/Versus.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -201,6 +437,40 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.Versus" />
+      <item itemvalue=".NET Launch Settings Profile.Versus: IIS Express" />
+      <item itemvalue="HTTP Request.get-requests#1" />
+      <item itemvalue="Publish to custom server.Versus" />
+      <item itemvalue="Publish to folder.Publish Versus to folder" />
+      <item itemvalue="Publish to folder.Publish Versus to folder (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Publish to folder.Publish Versus to folder" />
+        <item itemvalue="Publish to folder.Publish Versus to folder (1)" />
+        <item itemvalue="Publish to custom server.Versus" />
+        <item itemvalue="Publish to custom server.Versus" />
+        <item itemvalue="Publish to custom server.Versus" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:Versus" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -216,6 +486,22 @@
       <workItem from="1590546927487" duration="689000" />
       <workItem from="1590721492784" duration="39000" />
       <workItem from="1590979859333" duration="10651000" />
+      <workItem from="1591637197173" duration="6702000" />
+      <workItem from="1591718043941" duration="61000" />
+      <workItem from="1591718306640" duration="8083000" />
+      <workItem from="1591762986201" duration="4417000" />
+      <workItem from="1591767973601" duration="15630000" />
+      <workItem from="1591847226138" duration="378000" />
+      <workItem from="1591854663332" duration="33036000" />
+      <workItem from="1591936782985" duration="20920000" />
+      <workItem from="1592031653294" duration="34114000" />
+      <workItem from="1592120057384" duration="30631000" />
+      <workItem from="1592211035919" duration="15812000" />
+      <workItem from="1592244585188" duration="6748000" />
+      <workItem from="1592299442343" duration="19024000" />
+      <workItem from="1592388036608" duration="37419000" />
+      <workItem from="1592489466533" duration="14964000" />
+      <workItem from="1592580506691" duration="12956000" />
     </task>
     <servers />
   </component>
@@ -236,110 +522,199 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="415" height="466" key="DebuggerActiveHint" timestamp="1590999530287">
+    <state x="361" y="76" key="#Deployment" timestamp="1591770019460">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="415" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1590999530287" />
-    <state width="1493" height="315" key="GridCell.Tab.0.bottom" timestamp="1591004193673">
+    <state x="361" y="76" key="#Deployment/0.0.1536.834@0.0.1536.834" timestamp="1591770019460" />
+    <state x="502" y="137" key="#Publish_Versus_to_custom_server" timestamp="1591770193855">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.0.center" timestamp="1591004193673">
+    <state x="502" y="137" key="#Publish_Versus_to_custom_server/0.0.1536.834@0.0.1536.834" timestamp="1591770193855" />
+    <state x="502" y="137" key="#Publish_Versus_to_custom_server_(1)" timestamp="1591783251535">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.0.left" timestamp="1591004193673">
+    <state x="502" y="137" key="#Publish_Versus_to_custom_server_(1)/0.0.1536.834@0.0.1536.834" timestamp="1591783251535" />
+    <state x="502" y="141" key="#Publish_Versus_to_folder" timestamp="1592235387796">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.0.right" timestamp="1591004193673">
+    <state x="502" y="141" key="#Publish_Versus_to_folder/0.0.1536.834@0.0.1536.834" timestamp="1592235387796" />
+    <state x="502" y="141" key="#Publish_Versus_to_folder_(1)" timestamp="1592235591018">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.1.bottom" timestamp="1591004193673">
+    <state x="502" y="141" key="#Publish_Versus_to_folder_(1)/0.0.1536.834@0.0.1536.834" timestamp="1592235591018" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591857463838">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.1.center" timestamp="1591004193673">
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1591857463838" />
+    <state width="541" height="466" key="DebuggerActiveHint" timestamp="1592433891408">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.1.left" timestamp="1591004193673">
+    <state width="541" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1592433891408" />
+    <state width="1492" height="207" key="GridCell.Tab.0.bottom" timestamp="1592649830783">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.1.right" timestamp="1591004193673">
+    <state width="1492" height="207" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592649830783" />
+    <state width="1492" height="207" key="GridCell.Tab.0.center" timestamp="1592649830782">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.2.bottom" timestamp="1591004193674">
+    <state width="1492" height="207" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1592649830782" />
+    <state width="1492" height="207" key="GridCell.Tab.0.left" timestamp="1592649830778">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591004193674" />
-    <state width="1493" height="315" key="GridCell.Tab.2.center" timestamp="1591004193674">
+    <state width="1492" height="207" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1592649830778" />
+    <state width="1492" height="207" key="GridCell.Tab.0.right" timestamp="1592649830782">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1591004193674" />
-    <state width="1493" height="315" key="GridCell.Tab.2.left" timestamp="1591004193673">
+    <state width="1492" height="207" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1592649830782" />
+    <state width="1492" height="185" key="GridCell.Tab.1.bottom" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1591004193673" />
-    <state width="1493" height="315" key="GridCell.Tab.2.right" timestamp="1591004193674">
+    <state width="1492" height="185" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.1.center" timestamp="1592516168975">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1591004193674" />
-    <state width="1493" height="315" key="GridCell.Tab.3.bottom" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168975" />
+    <state width="1492" height="185" key="GridCell.Tab.1.left" timestamp="1592516168975">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.3.center" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168975" />
+    <state width="1492" height="185" key="GridCell.Tab.1.right" timestamp="1592516168975">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.3.left" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168975" />
+    <state width="1492" height="185" key="GridCell.Tab.2.bottom" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.3.right" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.2.center" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.4.bottom" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.2.left" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.4.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.4.center" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.2.right" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.4.center/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.4.left" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.3.bottom" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.4.left/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state width="1493" height="315" key="GridCell.Tab.4.right" timestamp="1591004193675">
+    <state width="1492" height="185" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.3.center" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.4.right/0.0.1536.834@0.0.1536.834" timestamp="1591004193675" />
-    <state x="361" y="149" key="Rider.ProjectTemplateDialog.Size" timestamp="1590981302002">
+    <state width="1492" height="185" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.3.left" timestamp="1592516168990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="149" key="Rider.ProjectTemplateDialog.Size/0.0.1536.834@0.0.1536.834" timestamp="1590981302002" />
+    <state width="1492" height="185" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.3.right" timestamp="1592516168990">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1492" height="185" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.4.bottom" timestamp="1592516168990">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1492" height="185" key="GridCell.Tab.4.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.4.center" timestamp="1592516168990">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1492" height="185" key="GridCell.Tab.4.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.4.left" timestamp="1592516168990">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1492" height="185" key="GridCell.Tab.4.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="185" key="GridCell.Tab.4.right" timestamp="1592516168990">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1492" height="185" key="GridCell.Tab.4.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="201" height="539" key="HiddenNamespacesPopup" timestamp="1591857498834">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="201" height="539" key="HiddenNamespacesPopup/0.0.1536.834@0.0.1536.834" timestamp="1591857498834" />
+    <state x="361" y="149" key="Rider.ProjectTemplateDialog.Size" timestamp="1592302269728">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="149" key="Rider.ProjectTemplateDialog.Size/0.0.1536.834@0.0.1536.834" timestamp="1592302269728" />
+    <state x="277" y="60" key="SettingsEditor" timestamp="1592236239321">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="277" y="60" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1592236239321" />
+    <state width="775" height="424" key="XDebugger.FullValuePopup" timestamp="1592502952458">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="775" height="424" key="XDebugger.FullValuePopup/0.0.1536.834@0.0.1536.834" timestamp="1592502952458" />
+    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1592050838427">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1536.834@0.0.1536.834" timestamp="1592050838427" />
+    <state x="388" y="98" width="759" height="638" key="find.popup" timestamp="1591764670604">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="388" y="98" width="759" height="638" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1591764670604" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1592635631886">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1592635631886" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1592245048767">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1592245048767" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs</url>
-          <line>28</line>
-          <properties documentPath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" initialLine="28">
+          <url>file://$PROJECT_DIR$/Versus.Core/Schedule/NotificationSender.cs</url>
+          <line>23</line>
+          <properties documentPath="$PROJECT_DIR$/Versus.Core/Schedule/NotificationSender.cs" initialLine="23" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Versus.Core/Schedule/NotificationSender.cs</url>
+          <line>17</line>
+          <properties documentPath="$PROJECT_DIR$/Versus.Core/Schedule/NotificationSender.cs" initialLine="17" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Versus.Core/Schedule/NotificationsScheduler.cs</url>
+          <line>9</line>
+          <properties documentPath="$PROJECT_DIR$/Versus.Core/Schedule/NotificationsScheduler.cs" initialLine="9" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Versus.Schedule/NotificationsJob.cs</url>
+          <line>24</line>
+          <properties documentPath="$PROJECT_DIR$/Versus.Schedule/NotificationsJob.cs" initialLine="24" />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Versus/Controllers/VersusController.cs</url>
+          <line>88</line>
+          <properties documentPath="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" initialLine="100">
             <startOffsets>
-              <option value="706" />
+              <option value="3066" />
             </startOffsets>
             <endOffsets>
-              <option value="707" />
+              <option value="3067" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Versus/Controllers/VersusController.cs</url>
+          <line>133</line>
+          <properties documentPath="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" initialLine="156">
+            <startOffsets>
+              <option value="4691" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4725" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -12,3 +12,5 @@ D:\Projects\Versus\Versus\Versus.Auth\obj\Debug\netcoreapp3.1\Versus.Auth.Assemb
 D:\Projects\Versus\Versus\Versus.Auth\obj\Debug\netcoreapp3.1\Versus.Auth.csproj.CopyComplete
 D:\Projects\Versus\Versus\Versus.Auth\obj\Debug\netcoreapp3.1\Versus.Auth.dll
 D:\Projects\Versus\Versus\Versus.Auth\obj\Debug\netcoreapp3.1\Versus.Auth.pdb
+D:\Projects\Versus\Versus\Versus.Auth\bin\Debug\netcoreapp3.1\Versus.Messaging.dll
+D:\Projects\Versus\Versus\Versus.Auth\bin\Debug\netcoreapp3.1\Versus.Messaging.pdb

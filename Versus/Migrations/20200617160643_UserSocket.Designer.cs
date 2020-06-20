@@ -10,8 +10,8 @@ using Versus.Core.EF;
 namespace Versus.Migrations
 {
     [DbContext(typeof(VersusContext))]
-    [Migration("20200601080450_requiredToken")]
-    partial class requiredToken
+    [Migration("20200617160643_UserSocket")]
+    partial class UserSocket
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,22 +46,6 @@ namespace Versus.Migrations
                         .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("71026341-bcde-4dec-baa7-4d940d11fdfe"),
-                            ConcurrencyStamp = "3fc3325b-d844-4660-b97d-d3dbb7809248",
-                            Name = "admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = new Guid("bee75d3b-fa86-454a-afca-fa3c485fd825"),
-                            ConcurrencyStamp = "1757e76b-6736-400a-934b-2159db4423c0",
-                            Name = "user",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -165,6 +149,23 @@ namespace Versus.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Versus.Data.Entities.Champion", b =>
+                {
+                    b.Property<string>("Country")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Wins")
+                        .HasColumnType("integer");
+
+                    b.ToTable("Champions");
+                });
+
             modelBuilder.Entity("Versus.Data.Entities.Exercise", b =>
                 {
                     b.Property<Guid>("Id")
@@ -263,6 +264,9 @@ namespace Versus.Migrations
                     b.Property<bool>("Invites")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("IsNotifications")
+                        .HasColumnType("boolean");
+
                     b.Property<bool>("Language")
                         .HasColumnType("boolean");
 
@@ -308,14 +312,17 @@ namespace Versus.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("IsVip")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("LastTime")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("character varying(256)")
@@ -324,6 +331,9 @@ namespace Versus.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
+
+                    b.Property<bool>("Online")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
@@ -360,6 +370,19 @@ namespace Versus.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Versus.Data.Entities.UserSocket", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SocketId")
+                        .HasColumnType("text");
+
+                    b.HasKey("UserId", "SocketId");
+
+                    b.ToTable("UserSockets");
+                });
+
             modelBuilder.Entity("Versus.Data.Entities.VIP", b =>
                 {
                     b.Property<Guid>("Id")
@@ -381,6 +404,65 @@ namespace Versus.Migrations
                         .IsUnique();
 
                     b.ToTable("Vip");
+                });
+
+            modelBuilder.Entity("Versus.Data.Entities.Versus", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Exercise")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("InitiatorId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("InitiatorIterations")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("InitiatorName")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("LastInvitedId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("OpponentId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("OpponentIterations")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("OpponentName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.Property<string>("WinnerName")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Versus");
+                });
+
+            modelBuilder.Entity("Versus.Data.Entities.VersusUser", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("VersusId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "VersusId");
+
+                    b.HasIndex("VersusId");
+
+                    b.ToTable("VersusUsers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -487,6 +569,15 @@ namespace Versus.Migrations
                     b.HasOne("Versus.Data.Entities.User", "User")
                         .WithOne("Vip")
                         .HasForeignKey("Versus.Data.Entities.VIP", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Versus.Data.Entities.VersusUser", b =>
+                {
+                    b.HasOne("Versus.Data.Entities.Versus", "Versus")
+                        .WithMany("RejectedUser")
+                        .HasForeignKey("VersusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

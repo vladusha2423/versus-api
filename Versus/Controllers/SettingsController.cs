@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Versus.Core.EF;
@@ -13,16 +13,19 @@ namespace Versus.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class SettingsController : ControllerBase
     {
         private readonly VersusContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public SettingsController(VersusContext context)
+        public SettingsController(VersusContext context, UserManager<User> um)
         {
             _context = context;
+            _userManager = um;
         }
 
-        // GET: api/Settings
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Settings>>> GetSettings()
         {
@@ -31,7 +34,7 @@ namespace Versus.Controllers
                 .ToListAsync();
         }
 
-        // GET: api/Settings/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Settings>> GetSettings(Guid id)
         {
@@ -46,20 +49,47 @@ namespace Versus.Controllers
 
             return settings;
         }
+        
+        [HttpGet("user/{id}")]
+        public async Task<ActionResult<Settings>> GetSettingsByUserId(Guid id)
+        {
+            if (!await _userManager.Users.AnyAsync(u => u.Id == id))
+                return NotFound("Не найден пользователь с таким Id");
 
-        // PUT: api/Settings/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+            var user = await _userManager.Users
+                .Include(u => u.Settings)
+                .ThenInclude(s => s.Notifications)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user.Settings == null)
+            {
+                return NotFound("У пользователя отсутствует связанная сущность \"Settings\"");
+            }
+
+            user.Settings.User = null;
+
+            return Ok(user.Settings);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSettings(Guid id, Settings settings)
         {
-            settings.Id = id;
+            if (!await _context.Settings.AnyAsync(s => s.Id == id))
+                return NotFound("Такого SettingsID не существует");
 
-            _context.Entry(settings).State = EntityState.Modified;
+            var reqSettings = await _context.Settings.FirstOrDefaultAsync(s => s.Id == id);
+
+            reqSettings.Invites = settings.Invites;
+            reqSettings.Language = settings.Language;
+            reqSettings.Sound = settings.Sound;
+            reqSettings.IsNotifications = settings.IsNotifications;
+
+            _context.Entry(reqSettings).State = EntityState.Modified;
 
             try
             {
                 await _context.SaveChangesAsync();
+                return Ok(reqSettings);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -72,13 +102,51 @@ namespace Versus.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
         }
+        
+        [HttpPut("user/{id}/{param}/{value}")]
+        public async Task<IActionResult> PutSettingsByUserId(Guid id, string param, bool value)
+        {
+            if (!await _userManager.Users.AnyAsync(s => s.Id == id))
+                return NotFound("Такого UserID не существует");
 
-        // POST: api/Settings
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+            var reqUser = await _userManager.Users
+                .Include(u => u.Settings)
+                .ThenInclude(s => s.Notifications)
+                .FirstOrDefaultAsync(s => s.Id == id);
+
+            var reqSettings = reqUser.Settings;
+            reqSettings.User = null;
+
+            if(param == "invites")
+                reqSettings.Invites = value;
+            else if (param == "language")
+                reqSettings.Language = value;
+            else if (param == "sound")
+                reqSettings.Sound = value;
+            else
+                reqSettings.IsNotifications = value;
+
+            _context.Entry(reqSettings).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Ok(reqSettings);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SettingsExists(reqUser.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+        
         [HttpPost]
         public async Task<ActionResult<Settings>> PostSettings(Settings settings)
         {
@@ -89,8 +157,7 @@ namespace Versus.Controllers
 
             return CreatedAtAction("GetSettings", new { id = settings.Id }, settings);
         }
-
-        // DELETE: api/Settings/5
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult<Settings>> DeleteSettings(Guid id)
         {

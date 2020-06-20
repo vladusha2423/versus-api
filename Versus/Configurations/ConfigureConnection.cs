@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Versus.Core.EF;
 
 namespace Versus.Configurations
@@ -17,7 +13,7 @@ namespace Versus.Configurations
         {
             services.AddDbContext<VersusContext>(opt =>
             opt.UseNpgsql(
-                "Host=localhost;Port=5432;Database=versus_db;Username=postgres;Password=2423",
+                "Host=188.225.73.49;Port=5432;Database=versus_db;Username=postgres;Password=veRsus2020",
                 b => b.MigrationsAssembly("Versus")));
             
             

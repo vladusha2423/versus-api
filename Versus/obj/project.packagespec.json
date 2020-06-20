@@ -24,6 +24,12 @@
           },
           "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
             "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+          },
+          "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj"
+          },
+          "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj"
           }
         }
       }
@@ -37,6 +43,14 @@
   "frameworks": {
     "netcoreapp3.1": {
       "dependencies": {
+        "Hangfire.AspNetCore": {
+          "target": "Package",
+          "version": "[1.7.11, )"
+        },
+        "Hangfire.PostgreSql": {
+          "target": "Package",
+          "version": "[1.7.0, )"
+        },
         "Microsoft.AspNetCore.Authentication.JwtBearer": {
           "target": "Package",
           "version": "[3.1.4, )"
@@ -62,6 +76,14 @@
           "suppressParent": "All",
           "target": "Package",
           "version": "[3.1.2, )"
+        },
+        "Microsoft.Extensions.Logging.Debug": {
+          "target": "Package",
+          "version": "[3.1.5, )"
+        },
+        "Microsoft.Owin.Cors": {
+          "target": "Package",
+          "version": "[4.1.0, )"
         },
         "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
           "target": "Package",

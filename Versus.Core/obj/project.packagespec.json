@@ -18,6 +18,9 @@
         "projectReferences": {
           "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
             "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+          },
+          "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj": {
+            "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj"
           }
         }
       }
@@ -30,6 +33,20 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.AspNetCore.Cors": {
+          "target": "Package",
+          "version": "[2.2.0, )"
+        },
+        "Microsoft.AspNetCore.SignalR": {
+          "target": "Package",
+          "version": "[1.1.0, )"
+        },
+        "Quartz": {
+          "target": "Package",
+          "version": "[3.0.7, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",

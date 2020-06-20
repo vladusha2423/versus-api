@@ -10,8 +10,8 @@ using Versus.Core.EF;
 namespace Versus.Migrations
 {
     [DbContext(typeof(VersusContext))]
-    [Migration("20200601032739_identity")]
-    partial class identity
+    [Migration("20200611065823_init1")]
+    partial class init1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,22 @@ namespace Versus.Migrations
                         .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("7bafb08d-4e50-4289-b403-ea0fe36d5ee7"),
+                            ConcurrencyStamp = "6011393d-01f3-421f-b27b-3cc84e012464",
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = new Guid("7d8b1590-04fe-4350-9108-62c917c833c8"),
+                            ConcurrencyStamp = "04fb0a1e-9a9e-4a72-a6c1-73f695ad98c8",
+                            Name = "user",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -247,6 +263,9 @@ namespace Versus.Migrations
                     b.Property<bool>("Invites")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("IsNotifications")
+                        .HasColumnType("boolean");
+
                     b.Property<bool>("Language")
                         .HasColumnType("boolean");
 
@@ -298,9 +317,6 @@ namespace Versus.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
@@ -322,6 +338,7 @@ namespace Versus.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Token")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")

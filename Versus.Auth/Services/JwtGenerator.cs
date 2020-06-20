@@ -33,7 +33,8 @@ namespace Versus.Auth.Services
             {
                 new Claim(ClaimTypes.NameIdentifier, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("UserName", user.UserName)
+                new Claim("UserName", user.UserName),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Token");
@@ -55,6 +56,7 @@ namespace Versus.Auth.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        
     }
 
 }

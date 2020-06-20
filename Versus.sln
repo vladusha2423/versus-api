@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versus.Core", "Versus.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versus.Data", "Versus.Data\Versus.Data.csproj", "{BA033C72-D88D-4C18-8BCC-60BC6B09C715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versus.Messaging", "Versus.Messaging\Versus.Messaging.csproj", "{3C2A35FE-CDFC-473D-8628-02E7A8102D5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versus.WebSockets", "Versus.WebSockets\Versus.WebSockets.csproj", "{14125555-F10F-4125-8EC7-A6995CE9AEB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{BA033C72-D88D-4C18-8BCC-60BC6B09C715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA033C72-D88D-4C18-8BCC-60BC6B09C715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA033C72-D88D-4C18-8BCC-60BC6B09C715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2A35FE-CDFC-473D-8628-02E7A8102D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2A35FE-CDFC-473D-8628-02E7A8102D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2A35FE-CDFC-473D-8628-02E7A8102D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2A35FE-CDFC-473D-8628-02E7A8102D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14125555-F10F-4125-8EC7-A6995CE9AEB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14125555-F10F-4125-8EC7-A6995CE9AEB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14125555-F10F-4125-8EC7-A6995CE9AEB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14125555-F10F-4125-8EC7-A6995CE9AEB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

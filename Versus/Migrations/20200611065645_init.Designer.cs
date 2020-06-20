@@ -10,8 +10,8 @@ using Versus.Core.EF;
 namespace Versus.Migrations
 {
     [DbContext(typeof(VersusContext))]
-    [Migration("20200601081558_nameToUserName")]
-    partial class nameToUserName
+    [Migration("20200611065645_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,15 +50,15 @@ namespace Versus.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0adc837e-50fe-4cee-902f-f46a5b0bdb1b"),
-                            ConcurrencyStamp = "6c65e1a7-1ba8-4bfd-ac39-724b6d103096",
+                            Id = new Guid("5b290f94-53bb-444d-a224-225648166bd5"),
+                            ConcurrencyStamp = "d5bb957a-dd54-40ee-b45d-4663ec8f1e01",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("0774ae8c-3332-47c6-8928-17115c500577"),
-                            ConcurrencyStamp = "073d961b-3dfe-4caf-8097-eb3b184f22e4",
+                            Id = new Guid("fa2877f6-ac5d-401a-9929-cf4808a6a65e"),
+                            ConcurrencyStamp = "886fb106-b9b1-41fa-8d54-800a09b405ec",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -261,6 +261,9 @@ namespace Versus.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<bool>("Invites")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsNotifications")
                         .HasColumnType("boolean");
 
                     b.Property<bool>("Language")

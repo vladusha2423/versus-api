@@ -98,6 +98,9 @@
             "projectReferences": {
               "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
                 "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+              },
+              "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj": {
+                "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj"
               }
             }
           }
@@ -110,6 +113,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -187,6 +204,130 @@
         }
       }
     },
+    "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj",
+        "projectName": "Versus.Messaging",
+        "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj",
+        "packagesPath": "C:\\Users\\dvv27\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dvv27\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj",
+        "projectName": "Versus.WebSockets",
+        "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj",
+        "packagesPath": "C:\\Users\\dvv27\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\dvv27\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Projects\\Versus\\Versus\\Versus.Auth\\Versus.Auth.csproj": {
+                "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Auth\\Versus.Auth.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Projects\\Versus\\Versus\\Versus\\Versus.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -218,6 +359,12 @@
               },
               "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj": {
                 "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Data\\Versus.Data.csproj"
+              },
+              "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj": {
+                "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.Messaging\\Versus.Messaging.csproj"
+              },
+              "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj": {
+                "projectPath": "D:\\Projects\\Versus\\Versus\\Versus.WebSockets\\Versus.WebSockets.csproj"
               }
             }
           }
@@ -231,6 +378,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Hangfire.AspNetCore": {
+              "target": "Package",
+              "version": "[1.7.11, )"
+            },
+            "Hangfire.PostgreSql": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.4, )"
@@ -256,6 +411,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Owin.Cors": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

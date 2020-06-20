@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Dynamic;
 
 namespace Versus.Data.Entities
 {
+    // ReSharper disable once InconsistentNaming
     public class VIP
     {
         public Guid Id { get; set; }

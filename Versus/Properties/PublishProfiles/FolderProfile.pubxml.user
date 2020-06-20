@@ -7,10 +7,6 @@
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>D:\Projects\Versus\Versus\Versus\bin\Debug\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgx1QurEHvUuCc/1g4g4kcQAAAAACAAAAAAAQZgAAAAEAACAAAACO2rnCu4BC1ww1aMQyyQlcyl4sLlsngd+4Uwa8TcxoQQAAAAAOgAAAAAIAACAAAAAL6TE40gVabDMUXQkkCiC4xivMLxMQ6vKwpoMeaT0obyAAAABnKynqGo8nRQrzhHL0R3kzJ6Oj8iIHzXYjJGQ+edmXgkAAAAD5WXinTa6l8P8nRqYF1ro9fNEWeVnQgaZPAFYL3aMJm63HXiqjmpG+eBreq+af0av4ouFaUVH+bdoNOkqpyqo0</EncryptedPassword>
   </PropertyGroup>
-  <ItemGroup>
-    <EFMigrations Include="Versus.EF.VersusContext">
-      <Value>"Host=localhost%3bPort=5432%3bDatabase=versus_db%3bUsername=postgres%3bPassword=veRsus2020"</Value>
-    </EFMigrations>
-  </ItemGroup>
 </Project>

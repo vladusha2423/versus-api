@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Versus.Core.EF;
@@ -12,16 +13,18 @@ namespace Versus.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ExercisesController : ControllerBase
     {
         private readonly VersusContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public ExercisesController(VersusContext context)
+        public ExercisesController(VersusContext context, UserManager<User> um)
         {
             _context = context;
+            _userManager = um;
         }
 
-        // GET: api/Exercises
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Exercises>>> GetExercises()
         {
@@ -32,8 +35,34 @@ namespace Versus.Controllers
                 .Include(e => e.Squats)
                 .ToListAsync();
         }
+        
+        [HttpGet("user/{id}")]
+        public async Task<ActionResult<Settings>> GetExercisesByUserId(Guid id)
+        {
+            if (!await _userManager.Users.AnyAsync(u => u.Id == id))
+                return NotFound("Не найден пользователь с таким Id");
 
-        // GET: api/Exercises/5
+            var user = await _userManager.Users
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.PullUps)
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.PushUps)
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.Abs)
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.Squats)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (user.Exercises == null)
+            {
+                return NotFound("У пользователя отсутствует связанная сущность \"Exercises\"");
+            }
+
+            user.Exercises.User = null;
+
+            return Ok(user.Exercises);
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Exercises>> GetExercises(Guid id)
         {
@@ -52,33 +81,39 @@ namespace Versus.Controllers
             return exercises;
         }
 
-        // GET: api/Exercises/5
         [HttpPost("reset/{id}")]
         public async Task<ActionResult<Exercises>> ResetExercises(Guid id)
         {
-            var exercises = await _context.Exercises
-                .Include(e => e.PushUps)
-                .Include(e => e.PullUps)
-                .Include(e => e.Abs)
-                .Include(e => e.Squats)
-                .FirstOrDefaultAsync(e => e.Id == id);
+            if (!await _userManager.Users.AnyAsync(u => u.Id == id))
+                return NotFound("Такого Юзера не существует");
 
-            exercises.PushUps.Wins = 0;
-            exercises.PushUps.Losses = 0;
-            exercises.PushUps.HighScore = 0;
-            exercises.PullUps.Wins = 0;
-            exercises.PullUps.Losses = 0;
-            exercises.PullUps.HighScore = 0;
-            exercises.Abs.Wins = 0;
-            exercises.Abs.Losses = 0;
-            exercises.Abs.HighScore = 0;
-            exercises.Squats.Wins = 0;
-            exercises.Squats.Losses = 0;
-            exercises.Squats.HighScore = 0;
+            var user = await _userManager.Users
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.PullUps)
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.PushUps)
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.Abs)
+                .Include(u => u.Exercises)
+                .ThenInclude(e => e.Squats)
+                .FirstOrDefaultAsync(u => u.Id == id);
 
-            _context.Entry(exercises).State = EntityState.Modified;
+            user.Exercises.PushUps.Wins = 0;
+            user.Exercises.PushUps.Losses = 0;
+            user.Exercises.PushUps.HighScore = 0;
+            user.Exercises.PullUps.Wins = 0;
+            user.Exercises.PullUps.Losses = 0;
+            user.Exercises.PullUps.HighScore = 0;
+            user.Exercises.Abs.Wins = 0;
+            user.Exercises.Abs.Losses = 0;
+            user.Exercises.Abs.HighScore = 0;
+            user.Exercises.Squats.Wins = 0;
+            user.Exercises.Squats.Losses = 0;
+            user.Exercises.Squats.HighScore = 0;
 
-            if (exercises == null)
+            _context.Entry(user.Exercises).State = EntityState.Modified;
+
+            if (user.Exercises == null)
             {
                 return NotFound();
             }
@@ -91,7 +126,7 @@ namespace Versus.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ExercisesExists(id))
+                if (!ExercisesExists(user.Exercises.Id))
                 {
                     return NotFound();
                 }
@@ -101,10 +136,7 @@ namespace Versus.Controllers
                 }
             }
         }
-
-        // PUT: api/Exercises/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutExercises(Guid id, Exercises exercises)
         {
@@ -135,10 +167,7 @@ namespace Versus.Controllers
 
             return NoContent();
         }
-
-        // POST: api/Exercises
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        
         [HttpPost]
         public async Task<ActionResult<Exercises>> PostExercises(Exercises exercises)
         {
@@ -156,7 +185,6 @@ namespace Versus.Controllers
             return CreatedAtAction("GetExercises", new { id = exercises.Id }, exercises);
         }
 
-        // DELETE: api/Exercises/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Exercises>> DeleteExercises(Guid id)
         {

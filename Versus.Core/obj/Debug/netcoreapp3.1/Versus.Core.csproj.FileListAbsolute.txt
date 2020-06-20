@@ -10,3 +10,5 @@ D:\Projects\Versus\Versus\Versus.Core\obj\Debug\netcoreapp3.1\Versus.Core.Assemb
 D:\Projects\Versus\Versus\Versus.Core\obj\Debug\netcoreapp3.1\Versus.Core.csproj.CopyComplete
 D:\Projects\Versus\Versus\Versus.Core\obj\Debug\netcoreapp3.1\Versus.Core.dll
 D:\Projects\Versus\Versus\Versus.Core\obj\Debug\netcoreapp3.1\Versus.Core.pdb
+D:\Projects\Versus\Versus\Versus.Core\bin\Debug\netcoreapp3.1\Versus.Messaging.dll
+D:\Projects\Versus\Versus\Versus.Core\bin\Debug\netcoreapp3.1\Versus.Messaging.pdb
