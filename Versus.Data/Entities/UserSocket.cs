@@ -6,5 +6,6 @@ namespace Versus.Data.Entities
     {
         public Guid UserId { get; set; }
         public string SocketId { get; set; }
+        public DateTime LastTime { get; set; }
     }
 }

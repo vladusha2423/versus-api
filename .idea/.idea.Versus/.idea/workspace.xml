@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73a0eae6-43f5-4676-86c4-b0ac83d426de" name="Default Changelist" comment="" />
+    <list default="true" id="73a0eae6-43f5-4676-86c4-b0ac83d426de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Converters/UserSearchConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus.Data/Dto/UserSearchDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Versus/Controllers/PhotoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Versus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Auth/obj/Debug/netcoreapp3.1/Versus.Auth.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Core/obj/Debug/netcoreapp3.1/Versus.Core.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Data/obj/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Migrations/VersusContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Migrations/VersusContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Schedule/NotificationsJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Schedule/NotificationsJob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/Versus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/Versus.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/bin/Debug/netcoreapp3.1/Versus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/obj/Debug/netcoreapp3.1/Versus.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versus/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Versus/wwwroot/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,72 +64,48 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Versus" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Versus" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Versus" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Versus" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Versus" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Versus" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="versus_db: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Versus" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F129BFFB-E30E-4E83-BAD7-40868B141DB2/6/Hub.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Converters/UserSearchConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus.Data/Dto/UserSearchDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/262/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Notification.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Register.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E2800C03-0A83-4832-8914-9BC6765EDE24/9/HostingAbstractionsHostExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D4CBD64C-8E11-4688-9804-096A430ED373/6/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61B7B576-1642-4BB6-A477-BB9F6717C0DF/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D4CBD64C-8E11-4688-9804-096A430ED373/7/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/13DA8DF4-F4FB-4394-A581-F44A587913F7/24/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/DisconnectCheck/DisconnectHostedService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/VersusController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Versus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FA2177E1-7B59-4D03-8C60-C68CA3DF33B9/A/CorsOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/DisconnectCheck/SingletonJobFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/DisconnectCheck/DisconnectJob.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/DisconnectCheck/JobSchedule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Configurations/UserIdProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -100,6 +122,7 @@
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9764A487-CD89-48B4-92F1-D4A7FF00F1DE/8/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/VersusResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Controllers/PhotoController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Controllers/VipsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Myself.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -126,74 +149,81 @@
     <setting file="file://$PROJECT_DIR$/Versus.WebSockets/ConnectionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/VersusUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/3D5/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Exercise.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Migrations/20200611065645_init.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42E91E9E-59DE-4A8B-8FEF-16881D2D2583/6/JwtBearerEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Data/Entities/Notifications.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FEE5448D-C7B4-48FD-B49C-A6BEA263F986/6b/b35c54d7/Expression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03CD873B-0838-406D-A848-0EC5FC7326C2/d1/3ef158e6/AndroidConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03CD873B-0838-406D-A848-0EC5FC7326C2/17/00319e5b/Message.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Statistics/StatisticsHostedService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/14E/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Statistics/SingletonJobFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Versus/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Statistics/StatisticsJob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Versus/Statistics/JobSchedule.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/User.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" />
-        <option value="$PROJECT_DIR$/Versus/Versus.csproj" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/VersusToken.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/VersusResponse.cs" />
-        <option value="$USER_HOME$/Desktop/index.html" />
-        <option value="$PROJECT_DIR$/Versus/Configurations/UserIdProvider.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f789fadc-795e-41ce-8419-ab1491291833/console.sql" />
-        <option value="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" />
-        <option value="$PROJECT_DIR$/Versus.WebSockets/Class1.cs" />
-        <option value="$PROJECT_DIR$/Versus.WebSockets/ConnectionManager.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/MyselfInfo.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" />
-        <option value="$PROJECT_DIR$/Versus.Core/EF/VersusContext.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Entities/Versus.cs" />
-        <option value="$PROJECT_DIR$/Versus.Core/Repositories/FindRepository.cs" />
-        <option value="$PROJECT_DIR$/Versus/Repositories/IFindRepository.cs" />
-        <option value="$PROJECT_DIR$/Versus/Repositories/FindRepository.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Interfaces/IAuthService.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Services/AuthService.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Services/JwtGenerator.cs" />
-        <option value="$PROJECT_DIR$/Versus.Auth/Interfaces/IJwtGenerator.cs" />
-        <option value="$PROJECT_DIR$/Versus.Core/Hubs/MessagesHub.cs" />
-        <option value="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" />
         <option value="$PROJECT_DIR$/Versus.Data/Entities/Login.cs" />
         <option value="$PROJECT_DIR$/Versus.Data/Entities/Myself.cs" />
         <option value="$PROJECT_DIR$/Versus.Data/Entities/VIP.cs" />
         <option value="$PROJECT_DIR$/Versus.Data/Entities/VersusUser.cs" />
-        <option value="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" />
         <option value="$PROJECT_DIR$/Versus.WebSockets/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" />
         <option value="$PROJECT_DIR$/Versus.WebSockets/Middleware.cs" />
-        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" />
         <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureJwt.cs" />
         <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureServices.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/ExerciseController.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/ExercisesController.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/NotificationsController.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" />
-        <option value="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/VipsController.cs" />
         <option value="$PROJECT_DIR$/Versus/Program.cs" />
-        <option value="$PROJECT_DIR$/Versus/Startup.cs" />
-        <option value="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Versus/DisconnectCheck/JobSchedule.cs" />
+        <option value="$PROJECT_DIR$/Versus/DisconnectCheck/QuartzHostedService.cs" />
+        <option value="$PROJECT_DIR$/Versus/DisconnectCheck/SingletonJobFactory.cs" />
+        <option value="$PROJECT_DIR$/Versus/DisconnectCheck/NotificationsJob.cs" />
+        <option value="$PROJECT_DIR$/Versus/DisconnectCheck/DisconnectHostedService.cs" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/Handler.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/UserSocket.cs" />
+        <option value="$PROJECT_DIR$/Versus/DisconnectCheck/DisconnectJob.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/User.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Dto/UserSearchDto.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Converters/UserSearchConverter.cs" />
+        <option value="$PROJECT_DIR$/Versus/wwwroot/ыуфкср.html" />
+        <option value="$PROJECT_DIR$/Versus/wwwroot/search.html" />
+        <option value="$PROJECT_DIR$/Versus.Messaging/Interfaces/IMobileMessagingClient.cs" />
+        <option value="$PROJECT_DIR$/Versus.Messaging/Services/MobileMessagingClient.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/MessagesController.cs" />
         <option value="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" />
+        <option value="$PROJECT_DIR$/Versus/wwwroot/js/custom.js" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Photo.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Dto/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Converters/UserConverter.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/PhotoController.cs" />
         <option value="$PROJECT_DIR$/Versus/wwwroot/index.html" />
+        <option value="$PROJECT_DIR$/Versus.WebSockets/MessagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Versus/Statistics/JobSchedule.cs" />
+        <option value="$PROJECT_DIR$/Versus/Statistics/NotificationsJob.cs" />
+        <option value="$PROJECT_DIR$/Versus/Statistics/SingletonJobFactory.cs" />
+        <option value="$PROJECT_DIR$/Versus/Statistics/QuartzHostedService.cs" />
+        <option value="$PROJECT_DIR$/Versus/Startup.cs" />
+        <option value="$PROJECT_DIR$/Versus/wwwroot/mail.html" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/UsersController.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Champion.cs" />
+        <option value="$PROJECT_DIR$/Versus/Configurations/ConfigureConnection.cs" />
+        <option value="$PROJECT_DIR$/Versus/Statistics/StatisticsJob.cs" />
+        <option value="$PROJECT_DIR$/Versus.Data/Entities/Settings.cs" />
         <option value="$PROJECT_DIR$/Versus/Schedule/NotificationsJob.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/SettingsController.cs" />
+        <option value="$PROJECT_DIR$/Versus/Controllers/AuthConroller.cs" />
       </list>
     </option>
   </component>
@@ -211,6 +241,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
@@ -361,7 +392,15 @@
       <workItem from="1592299442343" duration="19024000" />
       <workItem from="1592388036608" duration="37419000" />
       <workItem from="1592489466533" duration="14964000" />
-      <workItem from="1592580506691" duration="13635000" />
+      <workItem from="1592580506691" duration="28228000" />
+      <workItem from="1592738436223" duration="15122000" />
+      <workItem from="1592772401621" duration="8802000" />
+      <workItem from="1592823796614" duration="3080000" />
+      <workItem from="1592980045816" duration="10614000" />
+      <workItem from="1593029489098" duration="614000" />
+      <workItem from="1593070171683" duration="12140000" />
+      <workItem from="1593159696289" duration="15376000" />
+      <workItem from="1593238135563" duration="7351000" />
     </task>
     <servers />
   </component>
@@ -402,94 +441,94 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="502" y="141" key="#Publish_Versus_to_folder_(1)/0.0.1536.834@0.0.1536.834" timestamp="1592235591018" />
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591857463838">
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593172739067">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1591857463838" />
-    <state width="541" height="466" key="DebuggerActiveHint" timestamp="1592433891408">
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1593172739067" />
+    <state width="541" height="466" key="DebuggerActiveHint" timestamp="1593162836874">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="541" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1592433891408" />
-    <state width="1492" height="207" key="GridCell.Tab.0.bottom" timestamp="1592649830783">
+    <state width="541" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1593162836874" />
+    <state width="1492" height="175" key="GridCell.Tab.0.bottom" timestamp="1593331912691">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="207" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592649830783" />
-    <state width="1492" height="207" key="GridCell.Tab.0.center" timestamp="1592649830782">
+    <state width="1492" height="175" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593331912691" />
+    <state width="1492" height="175" key="GridCell.Tab.0.center" timestamp="1593331912691">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="207" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1592649830782" />
-    <state width="1492" height="207" key="GridCell.Tab.0.left" timestamp="1592649830778">
+    <state width="1492" height="175" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1593331912691" />
+    <state width="1492" height="175" key="GridCell.Tab.0.left" timestamp="1593331912691">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="207" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1592649830778" />
-    <state width="1492" height="207" key="GridCell.Tab.0.right" timestamp="1592649830782">
+    <state width="1492" height="175" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1593331912691" />
+    <state width="1492" height="175" key="GridCell.Tab.0.right" timestamp="1593331912691">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="207" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1592649830782" />
-    <state width="1492" height="185" key="GridCell.Tab.1.bottom" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1593331912691" />
+    <state width="1492" height="175" key="GridCell.Tab.1.bottom" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.1.center" timestamp="1592516168975">
+    <state width="1492" height="175" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.1.center" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168975" />
-    <state width="1492" height="185" key="GridCell.Tab.1.left" timestamp="1592516168975">
+    <state width="1492" height="175" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.1.left" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168975" />
-    <state width="1492" height="185" key="GridCell.Tab.1.right" timestamp="1592516168975">
+    <state width="1492" height="175" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.1.right" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168975" />
-    <state width="1492" height="185" key="GridCell.Tab.2.bottom" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.2.bottom" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.2.center" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.2.center" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.2.left" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.2.left" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.2.right" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.2.right" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.3.bottom" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.3.bottom" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.3.center" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.3.center" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.3.left" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.3.left" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.3.right" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.3.right" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.4.bottom" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.4.bottom" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.4.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.4.center" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.4.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.4.center" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.4.center/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.4.left" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.4.center/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.4.left" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.4.left/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
-    <state width="1492" height="185" key="GridCell.Tab.4.right" timestamp="1592516168990">
+    <state width="1492" height="175" key="GridCell.Tab.4.left/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
+    <state width="1492" height="175" key="GridCell.Tab.4.right" timestamp="1593331912081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1492" height="185" key="GridCell.Tab.4.right/0.0.1536.834@0.0.1536.834" timestamp="1592516168990" />
+    <state width="1492" height="175" key="GridCell.Tab.4.right/0.0.1536.834@0.0.1536.834" timestamp="1593331912081" />
     <state width="201" height="539" key="HiddenNamespacesPopup" timestamp="1591857498834">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -502,18 +541,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1592236239321" />
-    <state width="775" height="424" key="XDebugger.FullValuePopup" timestamp="1592502952458">
+    <state width="775" height="424" key="XDebugger.FullValuePopup" timestamp="1593239932793">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="775" height="424" key="XDebugger.FullValuePopup/0.0.1536.834@0.0.1536.834" timestamp="1592502952458" />
+    <state width="775" height="424" key="XDebugger.FullValuePopup/0.0.1536.834@0.0.1536.834" timestamp="1593239932793" />
     <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1592050838427">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="222" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1536.834@0.0.1536.834" timestamp="1592050838427" />
-    <state x="388" y="98" width="759" height="638" key="find.popup" timestamp="1591764670604">
+    <state x="388" y="98" width="759" height="638" key="find.popup" timestamp="1593167497242">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="388" y="98" width="759" height="638" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1591764670604" />
+    <state x="388" y="98" width="759" height="638" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1593167497242" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1592635631886">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -551,30 +590,17 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Versus/Controllers/VersusController.cs</url>
-          <line>88</line>
-          <properties documentPath="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" initialLine="100">
+          <url>file://$PROJECT_DIR$/Versus/Controllers/PhotoController.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/Versus/Controllers/PhotoController.cs" initialLine="31">
             <startOffsets>
-              <option value="3066" />
+              <option value="990" />
             </startOffsets>
             <endOffsets>
-              <option value="3067" />
+              <option value="991" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Versus/Controllers/VersusController.cs</url>
-          <line>133</line>
-          <properties documentPath="$PROJECT_DIR$/Versus/Controllers/VersusController.cs" initialLine="156">
-            <startOffsets>
-              <option value="4691" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4725" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

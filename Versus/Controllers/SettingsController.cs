@@ -116,7 +116,6 @@ namespace Versus.Controllers
                 .FirstOrDefaultAsync(s => s.Id == id);
 
             var reqSettings = reqUser.Settings;
-            reqSettings.User = null;
 
             if(param == "invites")
                 reqSettings.Invites = value;
@@ -132,6 +131,7 @@ namespace Versus.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                reqSettings.User = null;
                 return Ok(reqSettings);
             }
             catch (DbUpdateConcurrencyException)

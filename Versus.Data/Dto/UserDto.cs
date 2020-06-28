@@ -9,7 +9,7 @@ namespace Versus.Data.Dto
         public string Email { get; set; }
         public string Token { get; set; }
         public bool Online { get; set; }
-
+        public string Photo { get; set; }
         public DateTime LastTime { get; set; }
         public string UserName { get; set; }
         public string Country { get; set; }

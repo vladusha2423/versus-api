@@ -23,10 +23,17 @@
           <e p="ExercisesController.cs" t="Include" />
           <e p="MessagesController.cs" t="Include" />
           <e p="NotificationsController.cs" t="Include" />
+          <e p="PhotoController.cs" t="Include" />
           <e p="SettingsController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
           <e p="VersusController.cs" t="Include" />
           <e p="VipsController.cs" t="Include" />
+        </e>
+        <e p="DisconnectCheck" t="Include">
+          <e p="DisconnectHostedService.cs" t="Include" />
+          <e p="DisconnectJob.cs" t="Include" />
+          <e p="JobSchedule.cs" t="Include" />
+          <e p="SingletonJobFactory.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
           <e p="20200611065645_init.cs" t="Include" />
@@ -53,6 +60,14 @@
           <e p="20200617160643_UserSocket.Designer.cs" t="Include" />
           <e p="20200617224647_FirstCompleteId.cs" t="Include" />
           <e p="20200617224647_FirstCompleteId.Designer.cs" t="Include" />
+          <e p="20200621182040_LastTimeSocket.cs" t="Include" />
+          <e p="20200621182040_LastTimeSocket.Designer.cs" t="Include" />
+          <e p="20200624180312_Photo.cs" t="Include" />
+          <e p="20200624180312_Photo.Designer.cs" t="Include" />
+          <e p="20200627071332_ChampEmail.cs" t="Include" />
+          <e p="20200627071332_ChampEmail.Designer.cs" t="Include" />
+          <e p="20200628080301_NullableSettingsLanguage.cs" t="Include" />
+          <e p="20200628080301_NullableSettingsLanguage.Designer.cs" t="Include" />
           <e p="VersusContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -76,11 +91,26 @@
           <e p="SingletonJobFactory.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="Statistics" t="Include">
+          <e p="JobSchedule.cs" t="Include" />
+          <e p="SingletonJobFactory.cs" t="Include" />
+          <e p="StatisticsHostedService.cs" t="Include" />
+          <e p="StatisticsJob.cs" t="Include" />
+        </e>
         <e p="Versus.csproj" t="IncludeRecursive" />
         <e p="wwwroot" t="Include">
+          <e p="img" t="Include">
+            <e p="dvv2423_XpMCP28_qJw.jpg" t="Include" />
+            <e p="user1_XpMCP28_qJw.jpg" t="Include" />
+            <e p="XpMCP28_qJw.jpg" t="Include" />
+          </e>
           <e p="index.7z" t="Include" />
           <e p="index.html" t="Include" />
-          <e p="js" t="Include" />
+          <e p="js" t="Include">
+            <e p="custom.js" t="Include" />
+          </e>
+          <e p="mail.html" t="Include" />
+          <e p="search.html" t="Include" />
           <e p="signalr.html" t="Include" />
         </e>
       </e>
@@ -121,9 +151,11 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Converters" t="Include">
           <e p="UserConverter.cs" t="Include" />
+          <e p="UserSearchConverter.cs" t="Include" />
         </e>
         <e p="DTO" t="Include">
           <e p="UserDto.cs" t="Include" />
+          <e p="UserSearchDto.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
           <e p="Champion.cs" t="Include" />

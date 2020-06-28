@@ -1,19 +1,27 @@
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
 using Versus.Configurations;
+using Versus.DisconnectCheck;
 using Versus.Messaging.Interfaces;
 using Versus.Messaging.Services;
 using Versus.Schedule;
+using Versus.Statistics;
 using Versus.WebSockets;
+using JobSchedule = Versus.Schedule.JobSchedule;
+using QuartzHostedService = Versus.Schedule.QuartzHostedService;
+using SingletonJobFactory = Versus.Schedule.SingletonJobFactory;
 
 namespace Versus
 {
@@ -46,10 +54,18 @@ namespace Versus
             services.AddSingleton<NotificationsJob>();
             services.AddSingleton(new JobSchedule(
                 jobType: typeof(NotificationsJob),
-                // cronExpression: "* 0/1 * * * ? *"));
                 cronExpression: "0 0 12 * * ? *"));
-            
             services.AddHostedService<QuartzHostedService>();
+            services.AddSingleton<StatisticsJob>();
+            services.AddSingleton(new JobSchedule(
+                jobType: typeof(StatisticsJob),
+                cronExpression: "0 0/1 * * * ? *"));
+            services.AddHostedService<StatisticsHostedService>();
+            // services.AddSingleton<DisconnectJob>();
+            // services.AddSingleton(new JobSchedule(
+            //     jobType: typeof(DisconnectJob),
+            //     cronExpression: "0/6 * * * * ?"));
+            // services.AddHostedService<DisconnectHostedService>();
             
             
             services.AddSingleton<IUserIdProvider, UserIdProvider>();
@@ -102,8 +118,12 @@ namespace Versus
             app.UseWebSockets();
             app.MapWebSocketManager("/ws", serviceProvider.GetService<MessagesHandler>());
 
-            app.UseStaticFiles();
-
+            app.UseStaticFiles(new StaticFileOptions() // обрабатывает запросы к каталогу wwwroot/html
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "D:\\Projects\\Versus\\Versus\\Versus\\wwwroot\\img")),
+                RequestPath = new PathString("/img")
+            });
             app.UseRouting();
             
             app.UseCors("AllowAll");

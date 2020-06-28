@@ -47,19 +47,6 @@ namespace Versus.WebSockets
                                    cancellationToken: CancellationToken.None);          
         }
 
-        public async Task SendMessageAsync(string socketId, string message)
-        {
-            try
-            {
-                await SendMessageAsync(WebSocketConnectionManager.GetSocketById(socketId), message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            
-        }
-
         public async Task SendMessageToAllAsync(string message)
         {
             foreach(var pair in WebSocketConnectionManager.GetAll())

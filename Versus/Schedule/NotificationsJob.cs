@@ -52,7 +52,7 @@ namespace Versus.Schedule
                 var rnd = new Random();
                 var context = scope.ServiceProvider.GetService<VersusContext>();
                 var settings = await context.Settings.FirstOrDefaultAsync(s => s.UserId == userId);
-                return phrases[rnd.Next(1, 3) * (settings.Language ? 2 : 1) - 1];
+                return phrases[rnd.Next(1, 3) * (settings.Language.HasValue && settings.Language.Value ? 2 : 1) - 1];
             }
         }
         

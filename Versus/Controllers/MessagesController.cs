@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -75,7 +76,10 @@ namespace Versus.Controllers
             if (notification.Body == null || notification.Title == null)
                 return BadRequest("Недостаточно данных");
 
-            var result = await _mmc.SendNotification(token, notification.Title, notification.Body);
+            var result = await _mmc.SendAndroidNotification(token, notification.Title, notification.Body, new Dictionary<string, string>
+            {
+                {"Type", "Invite"},
+            });
             return Ok(result);
         }
 

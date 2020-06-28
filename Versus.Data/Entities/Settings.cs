@@ -7,7 +7,7 @@ namespace Versus.Data.Entities
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public User User { get; set; }
-        public bool Language { get; set; }
+        public bool? Language { get; set; }
         public bool Sound { get; set; }
         public bool Invites { get; set; }
         public bool IsNotifications { get; set; }

@@ -12,13 +12,50 @@
 		<input type=text id="passwordInput" placeholder="Enter your password"/>
 		<button id="connectButton">Connect</button>
 	</p>
+	<p>
+		<input type=text id="jwtInput" placeholder="Enter your JWT"/>
+	</p>
 	<input type=text id="textInput" placeholder="Enter your text"/>
 	<button id="sendButton">Send</button>
-
+	<p>
+		<button id="findButton">Find</button>		
+	</p>
+	<p>
+		<input type=text id="friendInput" placeholder="Enter your friend's userName"/>
+		<button id="friendButton">Invite Friend!</button>
+	</p>
+	<p>
+		<input type=text id="opponentInput" placeholder="Enter your opponent"/>
+		<button id="acceptButton">Accept</button>
+		<button id="rejectButton">Reject</button>
+		<button id="friendRejectButton">FriendReject</button>
+		<button id="readyButton">Ready</button>
+		<button id="botReadyButton">Timeout</button>
+	</p>
+	<p>
+		<input type=text id="iterationInput" placeholder="Enter your iteration"/>
+		<button id="iterationButton">Iteration!</button>
+	</p>
+	<p>
+		<input type=text id="completeInput" placeholder="Enter your result iterations"/>
+		
+	</p>
+	<p>
+		<button id="completeButton">Complete!</button><button id="botCompleteButton">BotComplete!</button>
+	</p>
+	<p>
+		<input type=text id="botCompleteInput" placeholder="Enter bot's result iterations"/>
+		
+	</p>
+	<p>
+		<button id="onlineButton">On/Off online</button>
+	</p>
 	<ul id="messages"></ul>
-
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     	<script language="javascript" type="text/javascript">
-			
+		let online = true; 
         
 
         function connect() {
@@ -26,7 +63,8 @@
         	let username = document.getElementById("usernameInput").value;
         	let password = document.getElementById("passwordInput").value;
         	
-			let uri = "ws://188.225.73.49/ws/username=" + username + "&password=" + password;
+        	address = "188.225.73.49";
+			let uri = "ws://" + address + "/ws/username=" + username + "&password=" + password;
         	
             socket = new WebSocket(uri);
 
@@ -39,8 +77,14 @@
             };
 
             socket.onmessage = function(event) {
-                appendItem(list, event.data);
-                console.log(event.data);
+            	if(event.data.indexOf("CheckDisconnect") !== -1 && online){
+					sendMessage("Online");
+				}
+            	else{
+					appendItem(list, event.data);
+					console.log(event.data);
+				}
+                
             };
 
             socket.onerror = function(event) {
@@ -50,6 +94,184 @@
 		let connectButton = document.getElementById("connectButton");
 		connectButton.addEventListener("click", function() {
 			connect();
+		});
+		let onlineButton = document.getElementById("onlineButton");
+		onlineButton.addEventListener("click", function() {
+			online = !online;
+			appendItem(list, "*Перестаю отправлять Online*");
+		});
+		let findButton = document.getElementById("findButton");
+		findButton.addEventListener("click", function() {
+			appendItem(list, "*Find*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/find/pullups',
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let friendButton = document.getElementById("friendButton");
+		friendButton.addEventListener("click", function() {
+			appendItem(list, "*Invite Friend*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/friend/pullups/' 
+								+ document.getElementById("friendInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let rejectButton = document.getElementById("rejectButton");
+		rejectButton.addEventListener("click", function() {
+			appendItem(list, "*Reject*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/reject/' + document.getElementById("opponentInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let friendRejectButton = document.getElementById("friendRejectButton");
+		friendRejectButton.addEventListener("click", function() {
+			appendItem(list, "*FriendReject*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/friend/reject/' + document.getElementById("opponentInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let acceptButton = document.getElementById("acceptButton");
+		acceptButton.addEventListener("click", function() {
+			appendItem(list, "*Accept*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/accept/' + document.getElementById("opponentInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let readyButton = document.getElementById("readyButton");
+		readyButton.addEventListener("click", function() {
+			appendItem(list, "*Ready*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/ready',
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let botReadyButton = document.getElementById("botReadyButton");
+		botReadyButton.addEventListener("click", function() {
+			appendItem(list, "*Timeout*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/timeout',
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let iterationButton = document.getElementById("iterationButton");
+		iterationButton.addEventListener("click", function() {
+			appendItem(list, "*Iteration*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/iteration/' + document.getElementById("iterationInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let completeButton = document.getElementById("completeButton");
+		completeButton.addEventListener("click", function() {
+			appendItem(list, "*Complete*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/completion/' + document.getElementById("completeInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
+		});
+		let botCompleteButton = document.getElementById("botCompleteButton");
+		botCompleteButton.addEventListener("click", function() {
+			appendItem(list, "*BotComplete*");
+			$.ajax(
+					{
+						type: 'POST',
+						url: 'http://' + address + '/api/versus/completion/' 
+								+ document.getElementById("completeInput").value + '/'
+								+ document.getElementById("botCompleteInput").value,
+						beforeSend: function(request) { // в хедерах передаем токен
+							request.setRequestHeader("Authorization", `Bearer ${document.getElementById("jwtInput").value}`);
+						},
+						dataType: "json",
+						contentType: "application/json; charset=utf-8",
+						success: function (data, textStatus) {
+							console.log(data); //выведем в консоль результат
+						}
+					});
 		});
         
 

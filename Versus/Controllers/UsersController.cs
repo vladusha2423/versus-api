@@ -69,6 +69,21 @@ namespace Versus.Controllers
         }
 
         // GET: api/Users/5
+        [HttpGet("search/{name}")]
+        public ActionResult<List<UserSearchDto>> GetUserByString(string name)
+        {
+            var users = UserSearchConverter.Convert(_userManager.Users.Where(
+                u => u.UserName.ToLower().Contains(name.ToLower())).ToList());
+            
+            if (users == null)
+            {
+                return NotFound();
+            }
+
+            return users;
+        }
+
+        // GET: api/Users/5
         [HttpGet("full/{id}")]
         public async Task<ActionResult<UserDto>> GetUserWithData(Guid id)
         {
@@ -119,7 +134,8 @@ namespace Versus.Controllers
             string sql = "select u.\"UserName\" as UserName, " +
                          "abs.\"Wins\" + sqs.\"Wins\" + pls.\"Wins\" + phs.\"Wins\" as Wins, " +
                          "u.\"Country\" as Country, " +
-                         "0 as Rate " +
+                         "0 as Rate, " +
+                         "u.\"Email\" as Email " +
                          "from public.\"AspNetUsers\" as u " +
                          "join public.\"Exercises\" as ex on ex.\"UserId\" = u.\"Id\" " +
                          "join public.\"Exercise\" as abs on abs.\"Id\" = ex.\"AbsId\" " +
@@ -158,7 +174,8 @@ namespace Versus.Controllers
                 Wins = user.Exercises.Abs.Wins + user.Exercises.Squats.Wins +
                                              user.Exercises.PullUps.Wins + user.Exercises.PushUps.Wins,
                 Rate = rate,
-                Country = user.Country
+                Country = user.Country,
+                Email = user.Email
             });
             return Ok(champs);
 

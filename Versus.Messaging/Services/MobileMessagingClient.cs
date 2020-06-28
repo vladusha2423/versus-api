@@ -27,7 +27,7 @@ namespace Versus.Messaging.Services
             return new Message()
             {
                 Token = token,
-                Notification = new Notification
+                Notification = new Notification()
                 {
                     Body = body,
                     Title = title
@@ -37,6 +37,24 @@ namespace Versus.Messaging.Services
                     {"Body", body},
                     {"Title", title}
                 }
+            };
+        }
+        
+        private Message CreateAndroidNotification(string title, string body, string token, Dictionary<string, string> data)
+        {    
+            return new Message()
+            {
+                Token = token,
+                Android = new AndroidConfig()
+                {
+                    Notification = new AndroidNotification()
+                    {
+                        Title = title,
+                        Body = body,
+                        ClickAction = "GET_INVITE"
+                    }
+                },
+                Data = data
             };
         }
         
@@ -58,6 +76,20 @@ namespace Versus.Messaging.Services
             try
             {
                 var result = await _messaging.SendAsync(CreateNotification(title, body, token));
+                return result;
+            }
+            catch (FirebaseException ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public async Task<object> SendAndroidNotification(string token, string title, string body, 
+            Dictionary<string, string> data)
+        {
+            try
+            {
+                var result = await _messaging.SendAsync(CreateAndroidNotification(title, body, token, data));
                 return result;
             }
             catch (FirebaseException ex)

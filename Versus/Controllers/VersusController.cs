@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -8,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Versus.Core.EF;
 using Versus.Data.Entities;
+using Versus.Messaging.Interfaces;
+using Versus.Messaging.Services;
 using Versus.WebSockets;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
@@ -21,14 +25,17 @@ namespace Versus.Controllers
         private readonly VersusContext _context;
         private readonly UserManager<User> _userManager;
         private readonly MessagesHandler _messagesHandler;
+        private readonly IMobileMessagingClient _mmc;
         
         public VersusController(
             VersusContext context, 
             UserManager<User> um,
+            IMobileMessagingClient mmc,
             MessagesHandler messagesHandler)
         {
             _context = context;
             _userManager = um;
+            _mmc = mmc;
             _messagesHandler = messagesHandler;
         }
         
@@ -52,7 +59,20 @@ namespace Versus.Controllers
                 var versusId = res.Entity.Id;
 
                 var userName = User.Identity.Name;
+
+                var socketId = await UserToSocket(user.Id);
+                if (socketId != null)
+                {
+                    await _messagesHandler.SendMessageAsync(socketId, 
+                        JsonSerializer.Serialize(
+                            new Dictionary<string,string>()
+                            {
+                                {"Type", "Find"},
+                            }));
+                }
+                
                 await _messagesHandler.FindJob(_context, _userManager, exercise, versusId, userName);
+                
 
                 return Ok();
             }
@@ -61,6 +81,71 @@ namespace Versus.Controllers
                 return StatusCode(500, ex);
             }
         }
+
+        [HttpPost("friend/{exercise}/{userName}")]
+        public async Task<ActionResult<object>> InviteFriend(string exercise, string userName)
+        {
+            var opponent = await _userManager.FindByNameAsync(userName);
+
+            if (opponent == null)
+                return NotFound("Оппонент не найден");
+            
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            _context.Versus.Add(new Data.Entities.Versus
+            {
+                DateTime = DateTime.Now,
+                InitiatorId = user.Id,
+                InitiatorName = user.UserName,
+                Exercise = exercise,
+                Status = "Searching",
+                InitiatorIterations = 0,
+                OpponentIterations = 0,
+                LastInvitedId = opponent.Id
+            });
+
+            await _context.SaveChangesAsync();
+
+            try
+            {
+                if (opponent.Online)
+                {
+                    var socketId = await UserToSocket(opponent.Id);
+                    if (socketId != null)
+                    {
+                        await _messagesHandler.SendMessageAsync(socketId, 
+                            JsonSerializer.Serialize(
+                                new Dictionary<string, string>()
+                                {
+                                    {"Type", "InviteFriend"},
+                                    {"Exercise", exercise},
+                                    {"UserName", user.UserName}
+                                }));
+                    }
+                }
+                else
+                {
+                    var result = await _mmc.SendAndroidNotification(opponent.Token, "Приглашение", 
+                        user.UserName + " зовет вас на поединок", 
+                        new Dictionary<string, string>
+                    {
+                        {"Type", "Invite"},
+                        {"Exercise", exercise},
+                        {"UserName", user.UserName}
+                    });
+                    return Ok(result);
+                }
+                
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An errof while send invite message " + ex.Message);
+                return StatusCode(500, ex);
+            }
+
+            return Ok();
+        } 
 
         [HttpPost("reject/{userName}")]
         public async Task<ActionResult<object>> Rejection(string userName)
@@ -73,9 +158,45 @@ namespace Versus.Controllers
             {
                 var user = await _userManager.FindByNameAsync(User.Identity.Name);
                 var versus = await _context.Versus
+                    .OrderByDescending(u => u.DateTime)
                     .FirstOrDefaultAsync(v => v.LastInvitedId == user.Id 
                                               && v.InitiatorName == userName);
                 await _messagesHandler.FindJob(_context, _userManager, versus.Exercise, versus.Id, userName);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex);
+            }
+        }
+
+        [HttpPost("friend/reject/{userName}")]
+        public async Task<ActionResult<object>> FriendRejection(string userName)
+        {
+            if (!await _userManager.Users.AnyAsync(u => u.UserName == userName))
+                return NotFound("Пользователя с таким именем не существует");
+
+            
+            try
+            {
+                var initiator = await _userManager.FindByNameAsync(userName);
+                var user = await _userManager.FindByNameAsync(User.Identity.Name);
+                var versus = await _context.Versus
+                    .OrderByDescending(u => u.DateTime)
+                    .FirstOrDefaultAsync(v => v.LastInvitedId == user.Id 
+                                              && v.Status != "Canceled" && v.Status != "Closed"
+                                              && v.InitiatorName == userName);
+                var socketId = await UserToSocket(initiator.Id);
+                await _messagesHandler.SendMessageAsync(socketId, 
+                    JsonSerializer.Serialize(
+                        new Dictionary<string,string>
+                        {
+                            {"Type", "FriendReject"},
+                            {"UserName", User.Identity.Name}
+                        }));
+                versus.Status = "Canceled";
+                _context.Entry(versus).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
                 return true;
             }
             catch(Exception ex)
@@ -91,6 +212,7 @@ namespace Versus.Controllers
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
 
             var versus = await _context.Versus
+                .OrderByDescending(u => u.DateTime)
                 .FirstOrDefaultAsync(v => v.InitiatorName == userName && v.Status == "Searching");
             
             if (versus == null)
@@ -132,7 +254,9 @@ namespace Versus.Controllers
         public async Task<ActionResult<object>> Ready()
         {
             var userName = User.Identity.Name;
-            var versus = await _context.Versus.FirstOrDefaultAsync(v => 
+            var versus = await _context.Versus
+                .OrderByDescending(u => u.DateTime)
+                .FirstOrDefaultAsync(v => 
                 (v.OpponentName == userName || v.InitiatorName == userName) && 
                 (v.Status == "Preparing" || v.Status == "Ready" || v.Status == "BotReady"));
             if (versus == null)
@@ -229,11 +353,30 @@ namespace Versus.Controllers
             
         }
 
+        [HttpPost("timeout")]
+        public async Task<ActionResult<object>> BotReady()
+        {
+            var userName = User.Identity.Name;
+            var versus = await _context.Versus
+                .OrderByDescending(u => u.DateTime).FirstOrDefaultAsync(v => 
+                (v.OpponentName == userName || v.InitiatorName == userName) && 
+                v.Status == "Searching");
+            if (versus == null)
+                return NotFound("Поединки для текущего пользователя отсутствуют или недействительны");
+            
+            versus.Status = "BotReady";
+            _context.Entry(versus).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return Ok();
+
+        }
+
         [HttpPost("iteration/{num}")]
         public async Task<ActionResult<object>> Iteration(int num)
         {
             var userName = User.Identity.Name;
-            var versus = await _context.Versus.FirstOrDefaultAsync(v => 
+            var versus = await _context.Versus
+                .OrderByDescending(u => u.DateTime).FirstOrDefaultAsync(v => 
                 (v.OpponentName == userName || v.InitiatorName == userName) && 
                 v.Status == "Active");
             if (versus == null)
@@ -302,7 +445,8 @@ namespace Versus.Controllers
         {
             // Get userName and his Versus
             var userName = User.Identity.Name;
-            var versus = await _context.Versus.FirstOrDefaultAsync(v => 
+            var versus = await _context.Versus
+                .OrderByDescending(u => u.DateTime).FirstOrDefaultAsync(v => 
                 (v.OpponentName == userName || v.InitiatorName == userName) && 
                 (v.Status == "Active" || v.Status == "Completion" || v.Status == "Canceled"));
             
@@ -384,7 +528,8 @@ namespace Versus.Controllers
         {
             // Get userName and his Versus
             var userName = User.Identity.Name;
-            var versus = await _context.Versus.FirstOrDefaultAsync(v => 
+            var versus = await _context.Versus
+                .OrderByDescending(u => u.DateTime).FirstOrDefaultAsync(v => 
                 (v.OpponentName == userName || v.InitiatorName == userName) && 
                 v.Status == "BotActive");
             

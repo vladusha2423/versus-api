@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Versus.Core.EF;
@@ -9,9 +10,10 @@ using Versus.Core.EF;
 namespace Versus.Migrations
 {
     [DbContext(typeof(VersusContext))]
-    partial class VersusContextModelSnapshot : ModelSnapshot
+    [Migration("20200624180312_Photo")]
+    partial class Photo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,9 +154,6 @@ namespace Versus.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("text");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("text");
-
                     b.Property<int>("Rate")
                         .HasColumnType("integer");
 
@@ -268,7 +267,7 @@ namespace Versus.Migrations
                     b.Property<bool>("IsNotifications")
                         .HasColumnType("boolean");
 
-                    b.Property<bool?>("Language")
+                    b.Property<bool>("Language")
                         .HasColumnType("boolean");
 
                     b.Property<Guid>("NotificationsId")

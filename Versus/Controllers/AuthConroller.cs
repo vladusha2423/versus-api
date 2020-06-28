@@ -48,7 +48,6 @@ namespace Versus.Controllers
                     return NotFound("Пользователя с таким именем не существует");
 
                 var user = await _userManager.FindByNameAsync(form.UserName);
-                user.Online = true;
                 
                 if (form.Token != null)
                     user.Token = form.Token;
@@ -102,7 +101,6 @@ namespace Versus.Controllers
                 if (await _userManager.Users.AnyAsync(u => u.UserName == item.UserName))
                 {
                     var userAuth = await _userManager.FindByNameAsync(item.UserName);
-                    userAuth.Online = true;
                     userAuth.Country = item.Country;
                     await _userManager.UpdateAsync(userAuth);
                     
@@ -144,7 +142,8 @@ namespace Versus.Controllers
 
                 var settings = new Settings
                 {
-                    UserId = user.Id
+                    UserId = user.Id,
+                    Language = null
                 };
                 if (settings.Notifications == null)
                     settings.Notifications = new Notifications();
@@ -161,39 +160,39 @@ namespace Versus.Controllers
 
         }
 
-        [HttpPost]
-        [Produces(typeof(object))]
-        public async Task<ActionResult<object>> Offline()
-        {
-            try
-            {
-                var user = await _userManager.FindByNameAsync(User.Identity.Name);
-                user.Online = false;
-                var result = await _userManager.UpdateAsync(user);
-                return Ok(result);
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPost]
-        [Produces(typeof(object))]
-        public async Task<ActionResult<object>> Online()
-        {
-            try
-            {
-                var user = await _userManager.FindByNameAsync(User.Identity.Name);
-                user.Online = true;
-                var result = await _userManager.UpdateAsync(user);
-                return Ok(result);
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        // [HttpPost]
+        // [Produces(typeof(object))]
+        // public async Task<ActionResult<object>> Offline()
+        // {
+        //     try
+        //     {
+        //         var user = await _userManager.FindByNameAsync(User.Identity.Name);
+        //         user.Online = false;
+        //         var result = await _userManager.UpdateAsync(user);
+        //         return Ok(result);
+        //     }
+        //     catch (DbUpdateConcurrencyException ex)
+        //     {
+        //         return BadRequest(ex.Message);
+        //     }
+        // }
+        //
+        // [HttpPost]
+        // [Produces(typeof(object))]
+        // public async Task<ActionResult<object>> Online()
+        // {
+        //     try
+        //     {
+        //         var user = await _userManager.FindByNameAsync(User.Identity.Name);
+        //         user.Online = true;
+        //         var result = await _userManager.UpdateAsync(user);
+        //         return Ok(result);
+        //     }
+        //     catch (DbUpdateConcurrencyException ex)
+        //     {
+        //         return BadRequest(ex.Message);
+        //     }
+        // }
         
     }
 

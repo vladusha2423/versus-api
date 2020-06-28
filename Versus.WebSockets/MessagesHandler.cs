@@ -52,13 +52,19 @@ namespace Versus.WebSockets
                 await dbContext.UserSockets.AddAsync(new UserSocket
                 {
                     UserId = userId,
-                    SocketId = socketId
+                    SocketId = socketId,
+                    LastTime = DateTime.Now
                 });
                 await dbContext.SaveChangesAsync();
                 
                 await SendMessageAsync(socketId, "{\"Type\": \"Connected\"}");
             }
             
+        }
+
+        public async Task<bool> OnDisconnected(string socketId)
+        {
+            return await OnDisconnected(WebSocketConnectionManager.GetSocketById(socketId));
         }
         
         public override async Task<bool> OnDisconnected(WebSocket socket)
@@ -107,12 +113,41 @@ namespace Versus.WebSockets
                                         v.Status == "Completion");
                                 await CompleteVersus(dbContext, versus);
                             }
+                            else if (await dbContext.Versus.AnyAsync(v =>
+                                (v.InitiatorId == user.Id || v.OpponentId == user.Id) &&
+                                v.Status == "Active"))
+                            {
+                                var versus = await dbContext.Versus
+                                    .FirstOrDefaultAsync(v =>
+                                        (v.InitiatorId == user.Id || v.OpponentId == user.Id) &&
+                                        v.Status == "Active");
+                                versus.Status = "Completion";
+                                var socketId = await UserToSocket(dbContext,
+                                    user.Id == versus.InitiatorId ? versus.OpponentId : versus.InitiatorId);
+                                await SendMessageAsync(socketId, 
+                                    JsonSerializer.Serialize(new Dictionary<string, string>
+                                    {
+                                        {"Type", "Cancel"}
+                                    }));
+                            }
+                            else if (await dbContext.Versus.AnyAsync(v =>
+                                v.InitiatorId == user.Id &&
+                                v.Status == "BotActive"))
+                            {
+                                var versus = await dbContext.Versus
+                                    .FirstOrDefaultAsync(v =>
+                                        v.InitiatorId == user.Id &&
+                                        v.Status == "BotActive");
+                                versus.Status = "Canceled";
+                                await FixUserResults(userManager, dbContext, versus.InitiatorId, false, 
+                                    versus.Exercise, 0);
+                            }
                             else
                             {
                                 var versus = await dbContext.Versus
                                     .FirstOrDefaultAsync(v =>
                                         (v.InitiatorId == user.Id || v.OpponentId == user.Id) &&
-                                        v.Status != "Closed");
+                                        v.Status != "Closed" && v.Status != "Canceled");
                                 versus.Status = "Canceled";
                                 var socketId = await UserToSocket(dbContext,
                                     user.Id == versus.InitiatorId ? versus.OpponentId : versus.InitiatorId);
@@ -139,9 +174,56 @@ namespace Versus.WebSockets
         public override async Task ReceiveAsync(WebSocket socket, WebSocketReceiveResult result, byte[] buffer)
         {
             var socketId = WebSocketConnectionManager.GetId(socket);
-            var message = $"{socketId} said: {Encoding.UTF8.GetString(buffer, 0, result.Count)}";
+            var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
-            await SendMessageToAllAsync(message);
+            if (message == "Closed")
+                await OnDisconnected(socket);
+            else if (message == "Online")
+            {
+                using var scope = _serviceScopeFactory.CreateScope();
+                var dbContext = scope.ServiceProvider.GetService<VersusContext>();
+                var userSocket = await dbContext.UserSockets
+                    .FirstOrDefaultAsync(u => u.SocketId == socketId);
+                userSocket.LastTime = DateTime.Now;
+                await dbContext.SaveChangesAsync();
+            }
+            else if (JsonSerializer.Deserialize<Dictionary<string, string>>(message)["Type"] == "Emoji")
+            {
+                using var scope = _serviceScopeFactory.CreateScope();
+                var dbContext = scope.ServiceProvider.GetService<VersusContext>();
+                var userSocket = await dbContext.UserSockets.FirstOrDefaultAsync(us =>
+                    us.SocketId == WebSocketConnectionManager.GetId(socket));
+                var userId = userSocket.UserId;
+                var versus = await dbContext.Versus
+                    .OrderByDescending(v => v.DateTime)
+                    .FirstOrDefaultAsync(v => v.Status == "Active" &&
+                                              (v.InitiatorId == userId ||
+                                               v.OpponentId == userId));
+                await SendMessageAsync(
+                    await UserToSocket(dbContext, 
+                        versus.InitiatorId == userId ? versus.OpponentId : versus.InitiatorId),
+                    message);
+            }
+        }
+
+        public bool CheckSocket(string socketId)
+        {
+            return WebSocketConnectionManager.GetSocketById(socketId) != null;
+        }
+        
+        public async Task SendMessageAsync(string socketId, string message)
+        {
+            try
+            {
+                Console.WriteLine(message);
+                await SendMessageAsync(WebSocketConnectionManager.GetSocketById(socketId), message);
+            }
+            catch (Exception ex)
+            {
+                await OnDisconnected(WebSocketConnectionManager.GetSocketById(socketId));
+                Console.WriteLine(ex.Message);
+            }
+            
         }
         
         private async Task<int> Find(VersusContext context, UserManager<User> userManager, string exercise, 
@@ -155,7 +237,12 @@ namespace Versus.WebSockets
                     v.Id == versusId);
             
             var opponent = await userManager.Users
-                .FirstOrDefaultAsync(u => u.UserName != user.UserName && u.Online
+                .Include(u => u.Settings)
+                .FirstOrDefaultAsync(u => u.UserName != user.UserName && u.Online 
+                && !context.Versus.Any(v => (v.InitiatorId == u.Id || v.OpponentId == u.Id || 
+                                    v.LastInvitedId == versusId) && v.Status != "Canceled" && v.Status != "Closed" || 
+                                            v.LastInvitedId == u.Id && v.Status == "Searching")
+                                                                      // && u.Settings.IsNotifications
                 && !versus.RejectedUser.Select(rj => rj.UserId).Contains(u.Id));
 
             if (opponent == null)
@@ -286,6 +373,71 @@ namespace Versus.WebSockets
             {
                 Console.WriteLine("Error while complete versus by reason of unexpected disconnect of member: " 
                                   + ex.Message);
+            }
+        }
+        
+        private async Task FixUserResults(UserManager<User> _userManager, VersusContext _context, 
+            Guid userId, bool isWin, string ex, int num)
+        {
+            if (ex == "pushups")
+            {
+                var user = await _userManager.Users
+                    .Include(u => u.Exercises)
+                    .ThenInclude(e => e.PushUps)
+                    .FirstOrDefaultAsync(u => u.Id == userId);
+                if (isWin)
+                    user.Exercises.PushUps.Wins++;
+                else 
+                    user.Exercises.PushUps.Losses++;
+                if (num > user.Exercises.PushUps.HighScore)
+                    user.Exercises.PushUps.HighScore = num;
+                await _userManager.UpdateAsync(user);
+                await _context.SaveChangesAsync();
+            }
+            else if (ex == "pullups")
+            {
+                var user = await _userManager.Users
+                    .Include(u => u.Exercises)
+                    .ThenInclude(e => e.PullUps)
+                    .FirstOrDefaultAsync(u => u.Id == userId);
+                if (isWin)
+                    user.Exercises.PullUps.Wins++;
+                else 
+                    user.Exercises.PullUps.Losses++;
+                if (num > user.Exercises.PullUps.HighScore)
+                    user.Exercises.PullUps.HighScore = num;
+                await _userManager.UpdateAsync(user);
+                await _context.SaveChangesAsync();
+            }
+            else if (ex == "abs")
+            {
+                var user = await _userManager.Users
+                    .Include(u => u.Exercises)
+                    .ThenInclude(e => e.Abs)
+                    .FirstOrDefaultAsync(u => u.Id == userId);
+                if (isWin)
+                    user.Exercises.Abs.Wins++;
+                else 
+                    user.Exercises.Abs.Losses++;
+                if (num > user.Exercises.Abs.HighScore)
+                    user.Exercises.Abs.HighScore = num;
+                await _userManager.UpdateAsync(user);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                var user = await _userManager.Users
+                    .Include(u => u.Exercises)
+                    .ThenInclude(e => e.Squats)
+                    .FirstOrDefaultAsync(u => u.Id == userId);
+                if (isWin)
+                    user.Exercises.Squats.Wins++;
+                else 
+                    user.Exercises.Squats.Losses++;
+                if (num > user.Exercises.Squats.HighScore)
+                    user.Exercises.Squats.HighScore = num;
+                await _userManager.UpdateAsync(user);
+                await _context.SaveChangesAsync();
             }
         }
         

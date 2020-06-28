@@ -24,8 +24,10 @@
 
     <ItemGroup>
       <Folder Include="Configurations\" />
+      <Folder Include="DisconnectCheck" />
       <Folder Include="Schedule" />
-      <Folder Include="wwwroot\js" />
+      <Folder Include="Statistics" />
+      <Folder Include="wwwroot\img" />
     </ItemGroup>
 
     <ItemGroup>

@@ -9,6 +9,7 @@ namespace Versus.Data.Entities
         [Required]
         public string Token { get; set; }
         public string Country { get; set; }
+        public string Photo { get; set; }
         public bool Online { get; set; }
         public DateTime LastTime { get; set; }
         public Settings Settings { get; set; }
